@@ -1,0 +1,21 @@
+# Python 3.12 recommended (Raschka's package requires >=3.10,<3.13; torch has no
+# 3.14 wheels yet). A ready-to-use .venv is already in this folder.
+#
+# Core — needed across the exercises:
+torch>=2.2
+numpy>=1.26
+tiktoken>=0.5.1        # Raschka tokenization (ch02, ch04, ch05)
+pandas>=2.2            # Raschka ch06 (spam classification)
+matplotlib>=3.7        # plots (Raschka ch04/05, Karpathy lectures)
+tqdm>=4.66
+regex                  # minGPT bpe.py
+requests               # minGPT bpe.py (downloads GPT-2 vocab)
+pytest>=8.0            # all test suites
+scikit-learn           # micrograd demo.py  (sklearn.datasets.make_moons)
+tensorboard            # makemore.py logging (torch.utils.tensorboard.SummaryWriter)
+psutil                 # Raschka ch07.py (check_if_running) — required to import ch07 / collect test_ch07
+
+# Optional / heavy — install only if/when you reach these:
+# transformers         # minGPT tests/test_huggingface_import.py  and  GPT.from_pretrained('gpt2')
+# tensorflow           # Raschka ch05 loading the ORIGINAL OpenAI GPT-2 weights (gpt_download.py)
+# nbformat             # Raschka utils.py notebook helper (only tests/test_qwen3.py imports it)

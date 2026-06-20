@@ -1,0 +1,62 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches / build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.so
+
+# Jupyter
+.ipynb_checkpoints/
+
+# TensorBoard event logs (training run outputs)
+events.out.tfevents.*
+# Note: model.pt checkpoints are intentionally tracked in this repo.
+# Uncomment below if you later want to ignore other run outputs:
+# wandb/
+# runs/
+# checkpoints/
+# *.ckpt
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Claude Code local (machine-specific permissions)
+.claude/settings.local.json
+
+# --- Local-only reference files (kept on disk, NOT pushed to GitHub) ---
+# Reference solution *code* stays tracked; the images/duplicates/CI/setup below do not.
+
+# Sutton & Barto solutions: generated plot outputs + CI
+rl-exercises/sutton-barto-solutions/images/
+rl-exercises/sutton-barto-solutions/.travis.yml
+
+# karpathy-solutions: notebooks (each has a tracked .py twin) + figure images
+exercises/karpathy-solutions/**/*.ipynb
+exercises/karpathy-solutions/micrograd/gout.svg
+exercises/karpathy-solutions/micrograd/moon_mlp.png
+exercises/karpathy-solutions/micrograd/puppy.jpg
+exercises/karpathy-solutions/minGPT/mingpt.jpg
+
+# LLMs-from-scratch: CI, setup/docker, dead submodule config, figure images
+exercises/raschka-solutions/LLMs-from-scratch/.github/
+exercises/raschka-solutions/LLMs-from-scratch/setup/
+exercises/raschka-solutions/LLMs-from-scratch/.gitmodules
+exercises/raschka-solutions/LLMs-from-scratch/ch04/10_kv-sharing/gemma4-kv-sharing.webp
+exercises/raschka-solutions/LLMs-from-scratch/ch04/10_kv-sharing/kv_memory_mha_gqa_kvsharing_gemma4_e2b.webp
+exercises/raschka-solutions/LLMs-from-scratch/ch04/10_kv-sharing/kv_memory_mha_gqa_kvsharing_gemma4_e4b.webp
+exercises/raschka-solutions/LLMs-from-scratch/ch05/11_qwen3/qwen3-chat-interface/public/logo_dark.webp
+exercises/raschka-solutions/LLMs-from-scratch/ch05/11_qwen3/qwen3-chat-interface/public/logo_light.webp
+
+# A paired notebook in your own work area (its .py twin is tracked)
+exercises/karpathy/with-headers/nn-zero-to-hero/lectures/makemore/makemore_part4_backprop.ipynb

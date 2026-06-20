@@ -1,0 +1,23 @@
+# Python 3.12 recommended. A ready-to-use .venv is already in this folder.
+#
+# --- Sutton & Barto track (ShangtongZhang scripts) ---
+numpy
+matplotlib
+seaborn
+scipy
+tqdm
+pandas                 # chapter12/lambda_effect.py
+#
+# --- Gymnasium track ---
+gymnasium[classic-control,box2d,toy-text]
+mujoco                 # MuJoCo continuous-control envs (Ant, HalfCheetah, Hopper, Humanoid, ...)
+imageio                # required by Gymnasium's MuJoCo envs
+pygame                 # rendering for classic-control / toy-text
+#
+pytest
+#
+# --- Optional / opt-in -------------------------------------------------------
+# After installing either of these, re-run  python _tools/gen_gym_scaffolds.py
+# to generate the extra environment scaffolds:
+# gymnasium[atari] ale-py      # 50+ Atari games
+# jax jaxlib flax              # the phys2d/* and tabular/* functional envs

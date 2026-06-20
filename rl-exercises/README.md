@@ -1,0 +1,148 @@
+# Reinforcement Learning — Coding Practice
+
+A hands-on workspace for implementing RL from scratch, in the same shape as the
+LLM `exercises/` folder. Two tracks:
+
+1. **Sutton & Barto** — re-implement the classic examples from *Reinforcement
+   Learning: An Introduction* (via Shangtong Zhang's well-known replication).
+2. **Gymnasium** — write your own policies for the standard RL environments,
+   with a runnable scaffold generated for **every environment your install
+   provides**.
+
+As with the LLM folder, the Sutton & Barto code comes in **two difficulty tiers**
+plus the **full reference solution**:
+
+- **`bare/`** — a descriptive top comment + imports only. You write everything
+  (including the function signatures).
+- **`with-headers/`** — the same comment + imports + module constants + function
+  headers with `raise NotImplementedError` bodies — a first pass so you don't get
+  stuck.
+- **`sutton-barto-solutions/`** — Shangtong Zhang's working code, to check against.
+
+---
+
+## Resources
+
+- **Book (in this folder):** [`RLbook2020.pdf`](RLbook2020.pdf) — Sutton & Barto, *Reinforcement Learning: An Introduction* (2nd ed., 2020). Official page: http://incompleteideas.net/book/the-book-2nd.html
+- **Sutton & Barto code:** Shangtong Zhang's replication — https://github.com/ShangtongZhang/reinforcement-learning-an-introduction
+- **Gymnasium** (the maintained fork of OpenAI Gym) — https://github.com/Farama-Foundation/Gymnasium · docs: https://gymnasium.farama.org/
+
+---
+
+## Folder layout
+
+```
+rl-exercises/
+├── README.md                ← you are here
+├── requirements.txt
+├── RLbook2020.pdf           ← Sutton & Barto, 2nd edition
+├── .venv/                   ← ready-to-use Python 3.12 env (gymnasium, mujoco, numpy, ...)
+│
+├── sutton-barto/            ← YOUR WORKSPACE
+│   ├── bare/                ← chapter01..13/*.py  (top comment + imports only)
+│   └── with-headers/        ← chapter01..13/*.py  (+ function headers; runnable wiring)
+├── sutton-barto-solutions/  ← reference: Shangtong Zhang's repository
+│
+├── gymnasium/               ← one policy scaffold per environment
+│   ├── common.py            ← BasePolicy + the roll-out loop (shared)
+│   ├── classic_control/  box2d/  toy_text/  mujoco/
+│   └── INDEX.md             ← list of every scaffold + envs needing extra installs
+│
+└── _tools/                  ← generators (strip_code.py, build_sutton_barto.py,
+                                gen_gym_scaffolds.py)
+```
+
+---
+
+## Setup
+
+A virtual environment is **already created** at `.venv/` (Python 3.12, with
+Gymnasium + MuJoCo installed). Activate it:
+
+```bash
+cd "rl-exercises"
+source .venv/bin/activate
+```
+
+To recreate it elsewhere:
+
+```bash
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+---
+
+## Track 1 — Sutton & Barto
+
+Each script reproduces a figure/example from the book. The top comment tells you
+which problem it is and what to produce; you implement the algorithm.
+
+```bash
+grep -rln "TODO: implement" sutton-barto/with-headers      # find tasks
+# implement, e.g., the cliff-walking task:
+cd sutton-barto/with-headers/chapter06
+MPLBACKEND=Agg python cliff_walking.py        # saves figures to ./ (or compare to solution)
+```
+Check your work against `sutton-barto-solutions/chapterNN/` (running a solution
+script writes its figure into `sutton-barto-solutions/images/`).
+
+The 26 scripts span all 13 chapters: bandits (ch2), DP / gridworlds / Jack's car
+rental / gambler's problem (ch3–4), Monte Carlo & blackjack (ch5), TD / Sarsa /
+Q-learning / cliff walking (ch6), n-step TD (ch7), Dyna & planning (ch8),
+function approximation (ch9–10), off-policy & Baird's counterexample (ch11),
+eligibility traces (ch12), and policy gradients (ch13).
+
+> Tip: run with `MPLBACKEND=Agg` for headless plotting (saves PNGs instead of
+> opening a window).
+
+---
+
+## Track 2 — Gymnasium
+
+`gymnasium/` has a ready-to-run scaffold for **every environment this install
+provides** (38: classic-control, Box2D, toy-text, MuJoCo). Each file embeds the
+env's official docs (observation/action spaces, rewards, termination) and a
+`Policy` you fill in. It runs out of the box with a **random** policy, so you can
+confirm the env works, then replace the policy:
+
+```bash
+cd gymnasium/classic_control
+python CartPole_v1.py --episodes 20     # evaluate (random until you implement Policy.act)
+python CartPole_v1.py --render          # watch it play
+```
+
+To write a policy, edit `Policy.act()` (and optionally `Policy.update()` to learn
+online) in that env's file. The shared roll-out loop lives in
+[`gymnasium/common.py`](gymnasium/common.py); it works with any observation/action
+space, so the same `BasePolicy` interface covers discrete and continuous control.
+
+See [`gymnasium/INDEX.md`](gymnasium/INDEX.md) for the full list. **Atari**
+(50+ games) and the **jax-based** `phys2d/`/`tabular/` envs aren't generated by
+default — install the extra (`pip install gymnasium[atari] ale-py`, or
+`pip install jax jaxlib flax`) and re-run `python _tools/gen_gym_scaffolds.py`
+to add them.
+
+---
+
+## How this was built
+
+`_tools/` holds the re-runnable generators:
+- `strip_code.py` — AST stripper (`strip_source` keeps signatures, `bare_source`
+  keeps only the top comment + imports). Shared with the LLM folder.
+- `build_sutton_barto.py` — strips the Shangtong Zhang scripts into both tiers
+  with a per-file top comment. Run it to regenerate `sutton-barto/`.
+- `gen_gym_scaffolds.py` — introspects the Gymnasium registry and writes a policy
+  scaffold per makeable env (re-run after installing extras to add more).
+
+---
+
+## Verified working
+
+With the bundled `.venv` (Python 3.12, Gymnasium 1.3, MuJoCo 3.9):
+- Sutton & Barto: all 26 scripts compile in both tiers; solution scripts run and
+  produce figures (e.g. ch3 gridworld, ch4 gambler's problem); the `with-headers`
+  scripts fail only with `NotImplementedError` until you implement them.
+- Gymnasium: all 38 scaffolds compile; verified runnable across families
+  (CartPole, FrozenLake, LunarLander, HalfCheetah, Humanoid) with the random
+  fallback policy.

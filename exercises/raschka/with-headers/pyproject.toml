@@ -1,0 +1,24 @@
+# Lightweight, editable install of the (stripped) llms_from_scratch package.
+#   cd raschka/<variant> && pip install -e .
+# Heavy extras (tensorflow for ch05 GPT-2 weight loading) are intentionally
+# omitted -- install them yourself if you reach chapter 5's weight download.
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llms-from-scratch-exercises"
+version = "0.0.1"
+description = "Stripped exercise skeleton of Sebastian Raschka's LLMs-from-scratch"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "torch>=2.2.2", "tiktoken>=0.5.1", "numpy>=1.26", "pandas>=2.2.1",
+  "matplotlib>=3.7.1", "tqdm>=4.66.1", "pytest>=8.0",
+  "psutil>=5.9.5", "requests>=2.31",
+]
+
+[tool.setuptools]
+package-dir = {"" = "pkg"}
+
+[tool.setuptools.packages.find]
+where = ["pkg"]
