@@ -1,0 +1,61 @@
+name: FEB Public miniF2F
+
+on:
+  push:
+    branches: [feb-public-benchmark]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  minif2f:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout official miniF2F
+        uses: actions/checkout@v4
+        with:
+          repository: google-deepmind/miniF2F
+          path: /tmp/miniF2F
+      - name: Install elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Confirm official toolchain
+        working-directory: /tmp/miniF2F
+        run: |
+          cat lean-toolchain
+          lake --version
+          lean --version
+      - name: Fetch precompiled dependencies
+        working-directory: /tmp/miniF2F
+        run: lake exe cache get
+      - name: Run frozen public benchmark smoke test
+        env:
+          MINIF2F_ROOT: /tmp/miniF2F
+          FEB_OUT: ${{ github.workspace }}/feb_public/results
+          MAX_TASKS: "20"
+          LEAN_TIMEOUT: "20"
+        run: python3 feb_public/run_minif2f.py
+      - name: Persist results
+        if: always()
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          if [ -d feb_public/results ]; then
+            git add feb_public/results
+            if ! git diff --cached --quiet; then
+              git commit -m "Persist FEB miniF2F smoke results"
+              git push origin HEAD:feb-public-benchmark
+            fi
+          fi
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: feb-public-minif2f-results
+          path: feb_public/results/
+          if-no-files-found: warn
