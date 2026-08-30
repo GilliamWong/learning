@@ -183,12 +183,13 @@ class RNNCell(nn.Module):
         #x_t is of size n_embd and h_t is of size n_embd2. This class has one set of weights for W_hh and then another for W_xh and then concats them
         #the weights should both output n_embd2, so W_hh is (n_embd2 x n_embd2) and W_xh is (n_embd x n_embd2)
         #or we can concat the inputs and just have one linear layer, either or. 
-        self.xh_to_h = nn.Parameter(nn.linear((config.n_embd + config.n_embd2), config.n_embd2))
+        self.xh_to_h = nn.Linear((config.n_embd + config.n_embd2), config.n_embd2)
 
     def forward(self, xt, hprev):
-        #if this is batched then x_t is B T n_embd and hprev is just B n_embd2
+        #if this is batched then x_t is B and hprev is just B n_embd2
         #whatever the case we always cat along the last dim to make sure we're fine
-        input = torch.cat((xt, hprev), dim=-1)
+        #x embed is passed in as xt
+        input = torch.cat((xt, hprev), dim=-1) 
         out = torch.tanh(self.xh_to_h(input))
         return out
 
@@ -198,13 +199,28 @@ class GRUCell(nn.Module):
     that makes the GRU more expressive and easier to optimize.
     """
     def __init__(self, config):
-        # TODO: implement GRUCell.__init__
-        raise NotImplementedError
+        super().__init__()
+        #we also need an update and a reset gate
+        self.update = nn.Linear((config.n_embd + config.n_embd2), config.n_embd2)
+        self.reset = nn.Linear((config.n_embd + config.n_embd2), config.n_embd2)
+
+        self.xh_to_h = nn.Linear((config.n_embd + config.n_embd2), config.n_embd2) #same as before
+
 
     def forward(self, xt, hprev):
         # first use the reset gate to wipe some channels of the hidden state to zero
-        # TODO: implement GRUCell.forward
-        raise NotImplementedError
+        prev_concat = torch.cat((xt, hprev), dim=-1)
+        reset_gate = torch.sigmoid(self.reset(prev_concat))
+        update_gate = torch.sigmoid(self.update(prev_concat))
+        
+        #candidate h = (reset gate * prevh) concat with xt, pass into xh_toh
+        #new h = update gate * prevh + (1 - update gate) * candidate h
+
+        curr_concat = torch.cat((xt, reset_gate * hprev), dim=-1)
+        candidate_h = torch.tanh(self.xh_to_h(curr_concat))
+
+        new_h = (update_gate * hprev) + ((1 - update_gate) * candidate_h)
+        return new_h
 
 class RNN(nn.Module):
 
@@ -212,31 +228,43 @@ class RNN(nn.Module):
         super().__init__()
         self.block_size = config.block_size
         self.cell_type = cell_type
+        self.n_embd = config.n_embd
+        self.n_embd2 = config.n_embd2
+
+        self.embeddings = nn.Embedding(config.vocab_size, config.n_embd) 
+        self.h = nn.Parameter(torch.zeros(config.n_embd2))
         
         #since we pass off the whole h to h thing to the RNNCell, here we only do the hidden state to output step. So one linear layer. 
-        self.h_to_y = nn.Parameter(nn.linear(config.n_embd2, config.vocab_size))
-        self.xh_to_h = RNNCell(config)
+        self.h_to_y = nn.Linear(config.n_embd2, config.vocab_size)
+        if cell_type == 'rnn':
+            self.xh_to_h = RNNCell(config)
+        else:
+            self.xh_to_h = GRUCell(config)
 
     def get_block_size(self):
         return self.block_size
 
     def forward(self, idx, targets=None):
-        #remember that idx is of size B T V and targets is of size B T
-        if self.cell_type == 'rnn':
-            #in this case T is block_size
+        #remember that idx is of size B T and targets is of size B T
+        if self.cell_type == 'rnn' or self.cell_type == 'gru':
+            #in this case T is block_size, but we loop over all tokens in the sequence either way.
+            logits = []
+            hprev = self.h.expand(idx.shape[0], self.n_embd2) #make the embeds B rows on the first read
+            x_embed = self.embeddings(idx) # so now this is B n_embd
+            for i in range(idx.shape[1]):
+                hprev = self.xh_to_h(x_embed[:, i], hprev) #B x n_embd2
+                logits.append(self.h_to_y(hprev)) #will output B x vocab_size
 
-
-
-
-
-            h = self.xh_to_h.forward(idx) #will output something of size B x T x n_embd2
-            logits = self.h_to_y(h) #will output B x vocab_size
-            if targets != None:
-                loss = F.cross_entropy(logits, targets, ignore_index=-1)
+            logits = torch.stack(logits, dim=1) #this is now B T V
+            if targets is not None:
+                #remember that CE takes B x V size for the logits and B size for the targets, but we have B T V and B T
+                #so we flatten such that we have BT V and BT now. 
+                loss = F.cross_entropy(logits.flatten(0, 1), targets.flatten(), ignore_index=-1) 
                 return logits, loss
             return logits, None
-        elif self.cell_type == 'gru':
-            return None #TODO finish this please
+        
+        # elif self.cell_type == 'gru':
+        #     return None #TODO finish this please
 
 # -----------------------------------------------------------------------------
 # MLP language model
@@ -336,7 +364,6 @@ class Bigram(nn.Module):
         super().__init__()
         self.weights = nn.Parameter(torch.zeros(config.vocab_size, config.vocab_size)) #this is our lookup table for logits
         
-
     def get_block_size(self):
         return 1
 
@@ -476,8 +503,8 @@ class CharDataset(Dataset):
         word = self.data[idx]
         word_encode = self.encode(word)
 
-        X = [0] + word_encode + [-1] * (self.max_word_length - len(word_encode) + 1)
-        Y = word_encode + [0] + [-1] * (self.max_word_length - len(word_encode) + 1)
+        X = [0] + word_encode + [0] * (self.max_word_length - len(word_encode))
+        Y = word_encode + [0] + [-1] * (self.max_word_length - len(word_encode))
 
         return torch.tensor(X, dtype=torch.int64), torch.tensor(Y, dtype=torch.int64)
         
@@ -554,7 +581,7 @@ if __name__ == '__main__':
     parser.add_argument('--n-embd2', type=int, default=64, help="number of feature channels elsewhere in the model")
     # optimization
     parser.add_argument('--batch-size', '-b', type=int, default=32, help="batch size during optimization")
-    parser.add_argument('--learning-rate', '-l', type=float, default=5e-4, help="learning rate")
+    parser.add_argument('--learning-rate', '-l', type=float, default=1e-3, help="learning rate")
     parser.add_argument('--weight-decay', '-w', type=float, default=0.01, help="weight decay")
     args = parser.parse_args()
     print(vars(args))
