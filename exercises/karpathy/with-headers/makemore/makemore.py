@@ -62,9 +62,12 @@ class NewGELU(nn.Module):
     Implementation of the GELU activation function currently in Google BERT repo (identical to OpenAI GPT).
     Reference: Gaussian Error Linear Units (GELU) paper: https://arxiv.org/abs/1606.08415
     """
+    # Resource (GELU behavior): https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html
     def forward(self, x):
-        # TODO: implement NewGELU.forward
-        raise NotImplementedError
+        #input of shape B T C, we want output of same shape, with the tanh approximation
+        out = 0.5 * x  * (1 + torch.tanh(math.sqrt(2 / math.pi) * (x + 0.044715 * x**3)))
+        return out
+
 
 class CausalSelfAttention(nn.Module):
     """
@@ -73,21 +76,80 @@ class CausalSelfAttention(nn.Module):
     explicit implementation here to show that there is nothing too scary here.
     """
 
-    def __init__(self, config):
-        # TODO: implement CausalSelfAttention.__init__
-        raise NotImplementedError
+    #self attention that then gets combined with MLP layers to form a Block
+    #Blocks are then combined to form the finished transformer model
+    #the only thing this self attention class is doing is taking an input of shape (B, T, C), performing self attention on all of the tokens,
+    #and then returning
 
+    #things that matter from config:
+    # block_size: int = None   # max sequence length
+    # n_embd: int = 64
+    # n_head: int = 4
+
+    #I think the only thing this class should be doing is attention, we take embeddings as input, perform attention, then softmax to form 
+    #attention weights, and then return that. 
+
+    # Resource (Q/K/V projections and multiple heads): https://docs.pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html
+    def __init__(self, config):
+        super().__init__()
+        self.len_context = config.block_size
+        self.num_heads = config.n_head
+        self.embed_dim = config.n_embd
+        self.head_dim = self.embed_dim // self.num_heads
+
+        assert config.n_embd % config.n_head == 0
+
+        #need to create Q K and V of the right size, and in pytorch
+
+        self.Q = nn.Linear(self.embed_dim, self.embed_dim)
+        self.K = nn.Linear(self.embed_dim, self.embed_dim)
+        self.V = nn.Linear(self.embed_dim, self.embed_dim)
+
+        self.merge_heads = nn.Linear(self.embed_dim, self.embed_dim)
+
+        self.register_buffer("attention_mask", ~torch.tril(torch.ones((self.len_context, self.len_context))).bool())
+
+
+    # Resource (scaled dot-product attention and causal masking): https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html
     def forward(self, x):
-        # TODO: implement CausalSelfAttention.forward
-        raise NotImplementedError
+        B, T, C = x.size()
+
+        q = self.Q(x) #B T embed_dim
+        k = self.K(x) #B T embed_dim
+        v = self.V(x) #B T embed_dim
+
+        #need to split into heads, so use .view
+        q_heads = q.view(B, T, self.num_heads, self.head_dim).transpose(1, 2) #these are all B num_heads T head_dim 
+        k_heads = k.view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+        v_heads = v.view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+
+        qk = q_heads @ k_heads.mT # B num_heads T T
+        divisor = math.sqrt(self.head_dim) #single value
+
+        raw_scores = torch.div(qk, divisor) #still B num_heads T T 
+
+        masked_scores = raw_scores.masked_fill(self.attention_mask[:T, :T], float('-inf')) #B num_heads T T 
+
+        softmax_scores = torch.softmax(masked_scores, dim=3) #B num_heads T T 
+        
+        final_scores = softmax_scores @ v_heads #B num_heads T head_dim
+
+        final_scores = final_scores.transpose(1, 2).contiguous() #B T num_heads head_dim
+        final_scores = final_scores.view(B, T, self.embed_dim)
+
+        output = self.merge_heads(final_scores) # B T embed_dim
+        return output
+
 
 class Block(nn.Module):
     """ an unassuming Transformer block """
 
+    # Resource (attention + feed-forward block structure): https://docs.pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html
     def __init__(self, config):
         # TODO: implement Block.__init__
         raise NotImplementedError
 
+    # Resource (pre-norm residual block walkthrough): https://www.youtube.com/watch?v=kCc8FmEb1nY
     def forward(self, x):
         # TODO: implement Block.forward
         raise NotImplementedError
@@ -95,14 +157,17 @@ class Block(nn.Module):
 class Transformer(nn.Module):
     """ Transformer Language Model, exactly as seen in GPT-2 """
 
+    # Resource (GPT-2 model components and configuration): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2Config
     def __init__(self, config):
         # TODO: implement Transformer.__init__
         raise NotImplementedError
 
+    # Resource (n_positions is the maximum context length): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2Config
     def get_block_size(self):
         # TODO: implement Transformer.get_block_size
         raise NotImplementedError
 
+    # Resource (causal-LM inputs, logits, labels, and loss): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2LMHeadModel.forward
     def forward(self, idx, targets=None):
         # TODO: implement Transformer.forward
         raise NotImplementedError
