@@ -155,7 +155,7 @@ class Block(nn.Module):
 
         #I would assume that the input is gonna be B T embed_dim, so we plan around that
 
-        self.attention = CausalSelfAttention(config)
+        self.attn = CausalSelfAttention(config)
 
         self.mlp = nn.Sequential(
             nn.Linear(self.embed_dim, 4 * self.embed_dim),
@@ -176,9 +176,9 @@ class Block(nn.Module):
         #output from the mlp goes through layernorm and then gets the output from attention added back to it as another residual connection
         #that entire thing is then returned
 
-        attended_x = x + self.layernorm_1(self.attention(x)) #B T embed_dim
+        attended_x = x + self.attn(self.layernorm_1(x)) #B T embed_dim
 
-        mlp_x = attended_x + self.layernorm_2(self.mlp(attended_x)) #B T embed_dim
+        mlp_x = attended_x + self.mlp(self.layernorm_2(attended_x)) #B T embed_dim
 
         return mlp_x #still B T embed_dim
 
@@ -187,13 +187,20 @@ class Transformer(nn.Module):
 
     # Resource (GPT-2 model components and configuration): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2Config
     def __init__(self, config):
-        # TODO: implement Transformer.__init__
-        raise NotImplementedError
+        # block_size: int = None # length of the input sequences of integers
+        # vocab_size: int = None # the input integers are in range [0 .. vocab_size -1]
+        # # parameters below control the sizes of each model slightly differently
+        # n_layer: int = 4
+        # n_embd: int = 64
+        # n_embd2: int = 64
+        # n_head: int = 4
+
+        self.context_len = config.block_size
+        self.vocab_size = config.vocab_size
 
     # Resource (n_positions is the maximum context length): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2Config
     def get_block_size(self):
-        # TODO: implement Transformer.get_block_size
-        raise NotImplementedError
+        return self.context_len
 
     # Resource (causal-LM inputs, logits, labels, and loss): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2LMHeadModel.forward
     def forward(self, idx, targets=None):
