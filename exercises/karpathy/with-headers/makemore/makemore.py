@@ -146,13 +146,41 @@ class Block(nn.Module):
 
     # Resource (attention + feed-forward block structure): https://docs.pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html
     def __init__(self, config):
-        # TODO: implement Block.__init__
-        raise NotImplementedError
+        super().__init__()
+
+        # n_embd: int = 64
+        self.embed_dim = config.n_embd
+
+        #so we need the MLP layer the two layernorms and the self attention layer 
+
+        #I would assume that the input is gonna be B T embed_dim, so we plan around that
+
+        self.attention = CausalSelfAttention(config)
+
+        self.mlp = nn.Sequential(
+            nn.Linear(self.embed_dim, 4 * self.embed_dim),
+            NewGELU(),
+            nn.Linear(self.embed_dim * 4, self.embed_dim)
+        )
+
+        self.layernorm_1 = nn.LayerNorm(self.embed_dim)
+        self.layernorm_2 = nn.LayerNorm(self.embed_dim)
+
 
     # Resource (pre-norm residual block walkthrough): https://www.youtube.com/watch?v=kCc8FmEb1nY
     def forward(self, x):
-        # TODO: implement Block.forward
-        raise NotImplementedError
+        #a few steps:
+        #1. we take x as input and feed it into self attention
+        #then we take that output, put it through a layernorm, then add back x for the residual connection
+        #then we feed that result into the mlp
+        #output from the mlp goes through layernorm and then gets the output from attention added back to it as another residual connection
+        #that entire thing is then returned
+
+        attended_x = x + self.layernorm_1(self.attention(x)) #B T embed_dim
+
+        mlp_x = attended_x + self.layernorm_2(self.mlp(attended_x)) #B T embed_dim
+
+        return mlp_x #still B T embed_dim
 
 class Transformer(nn.Module):
     """ Transformer Language Model, exactly as seen in GPT-2 """
