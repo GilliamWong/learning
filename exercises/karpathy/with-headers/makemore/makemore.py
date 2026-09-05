@@ -187,6 +187,7 @@ class Transformer(nn.Module):
 
     # Resource (GPT-2 model components and configuration): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2Config
     def __init__(self, config):
+        super().__init__()
         # block_size: int = None # length of the input sequences of integers
         # vocab_size: int = None # the input integers are in range [0 .. vocab_size -1]
         # # parameters below control the sizes of each model slightly differently
@@ -197,6 +198,24 @@ class Transformer(nn.Module):
 
         self.context_len = config.block_size
         self.vocab_size = config.vocab_size
+        self.embed_dim = config.n_embd
+
+        self.blocks = nn.ModuleList(Block(config) for layer in range(config.n_layer))
+
+        #token embeddings
+        self.embeddings = nn.Embedding(self.vocab_size, self.embed_dim)
+
+        #for this model positional embeddings are learned, so we need that as well
+        self.pos_embeddings = nn.Embedding(self.context_len, self.embed_dim)
+
+        #we need to convert output of the blocks, which is B T embed_dim into the final vocab size output
+        self.vocab_output_head = nn.Linear(self.embed_dim, self.vocab_size)
+
+        #since we're doing prenorm we need to layernorm one last time before passing into the vocab output head
+        #this is because we do x + layernorm(x) basically, and so we want a layernorm(x + ln(x)) at the very end before output
+        self.layernorm_end = nn.LayerNorm(self.embed_dim)
+
+        
 
     # Resource (n_positions is the maximum context length): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2Config
     def get_block_size(self):
@@ -204,8 +223,27 @@ class Transformer(nn.Module):
 
     # Resource (causal-LM inputs, logits, labels, and loss): https://huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2LMHeadModel.forward
     def forward(self, idx, targets=None):
-        # TODO: implement Transformer.forward
-        raise NotImplementedError
+        #first we need to get the token embeddings in question and then add the positional encodings to them
+        B, T = idx.shape
+        curr_context_len = torch.arange(T)
+        token_embeddings = self.embeddings(torch.tensor(idx)) + self.pos_embeddings(curr_context_len) #B T embed_dim
+
+        #then feed it through all the blocks
+        x = token_embeddings #B T embed_dim
+        for block in self.blocks:
+            x = block(x)
+        
+        #then after all the blocks apply the final layernorm
+        x = self.layernorm_end(x) #B T embed_dim
+
+        #then downproject to output and return
+        logits = self.vocab_output_head(x) #should be B T vocab_size
+        if targets is None:
+            return (logits, None)
+        else:
+            #targets is B T
+            loss = F.cross_entropy(logits.flatten(0, 1), targets.flatten(0, 1), ignore_index = -1)
+            return (logits, loss)
 
 # -----------------------------------------------------------------------------
 # Bag of Words (BoW) language model
