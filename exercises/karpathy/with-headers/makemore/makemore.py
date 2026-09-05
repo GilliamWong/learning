@@ -209,7 +209,7 @@ class Transformer(nn.Module):
         self.pos_embeddings = nn.Embedding(self.context_len, self.embed_dim)
 
         #we need to convert output of the blocks, which is B T embed_dim into the final vocab size output
-        self.vocab_output_head = nn.Linear(self.embed_dim, self.vocab_size)
+        self.vocab_output_head = nn.Linear(self.embed_dim, self.vocab_size, bias=False)
 
         #since we're doing prenorm we need to layernorm one last time before passing into the vocab output head
         #this is because we do x + layernorm(x) basically, and so we want a layernorm(x + ln(x)) at the very end before output
@@ -225,8 +225,9 @@ class Transformer(nn.Module):
     def forward(self, idx, targets=None):
         #first we need to get the token embeddings in question and then add the positional encodings to them
         B, T = idx.shape
-        curr_context_len = torch.arange(T)
-        token_embeddings = self.embeddings(torch.tensor(idx)) + self.pos_embeddings(curr_context_len) #B T embed_dim
+        assert T <= self.context_len, f"sequence length {T} exceeds block size {self.context_len}"
+        curr_context_len = torch.arange(T, device=idx.device) #must match idx's device or cuda runs fail
+        token_embeddings = self.embeddings(idx) + self.pos_embeddings(curr_context_len) #B T embed_dim
 
         #then feed it through all the blocks
         x = token_embeddings #B T embed_dim
