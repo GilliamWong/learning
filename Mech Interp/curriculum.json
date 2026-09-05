@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "01",
+      "title": "Tensors you can reason about",
+      "subtitle": "Turn familiar linear algebra into reliable PyTorch operations.",
+      "kind": "Local exercises",
+      "file": "modules/01_Tensors.ipynb",
+      "suggestion": "Start with one 30–60 minute session; continue at your own pace.",
+      "tasks": [
+        {
+          "id": "orient",
+          "label": "Read the short setup and predict the example shapes"
+        },
+        {
+          "id": "batch",
+          "label": "Implement the batching exercise"
+        },
+        {
+          "id": "center",
+          "label": "Implement centering without mixing examples"
+        },
+        {
+          "id": "similarity",
+          "label": "Compute pairwise similarities"
+        },
+        {
+          "id": "probability",
+          "label": "Implement stable probabilities"
+        },
+        {
+          "id": "explain",
+          "label": "Explain one surprising result in your own words"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Train, measure, investigate",
+      "subtitle": "Build a small model and learn what a training result does and does not establish.",
+      "kind": "Local exercises",
+      "file": "modules/02_Train_a_Small_Model.ipynb",
+      "suggestion": "Several focused sessions. No model downloads or GPU required.",
+      "tasks": [
+        {
+          "id": "predict",
+          "label": "Inspect the generated data and make a prediction"
+        },
+        {
+          "id": "model",
+          "label": "Build a small classifier"
+        },
+        {
+          "id": "step",
+          "label": "Implement one training step"
+        },
+        {
+          "id": "evaluate",
+          "label": "Implement evaluation and train a baseline"
+        },
+        {
+          "id": "vary",
+          "label": "Change one setting and compare fairly"
+        },
+        {
+          "id": "explain",
+          "label": "Write a claim, supporting evidence, and a limitation"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "Inside a transformer",
+      "subtitle": "Connect token predictions to the computations inside the model.",
+      "kind": "Guide + official exercises",
+      "file": "modules/03_Transformer_Internals.ipynb",
+      "suggestion": "The reading plan is ready. Use ARENA's own notebook for the implementation.",
+      "tasks": [
+        {
+          "id": "read",
+          "label": "Read the assigned transformer overview"
+        },
+        {
+          "id": "io",
+          "label": "Complete ARENA 1.1 inputs and outputs"
+        },
+        {
+          "id": "implement",
+          "label": "Implement and verify the transformer modules"
+        },
+        {
+          "id": "trace",
+          "label": "Explain one forward pass, including tensor dimensions"
+        },
+        {
+          "id": "reflect",
+          "label": "Record remaining questions before moving on"
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Find an induction mechanism",
+      "subtitle": "Read a paper with a concrete prediction and experiment in mind.",
+      "kind": "Guide + official exercises",
+      "file": "modules/04_Induction_Heads.ipynb",
+      "suggestion": "Start after transformer internals; model setup belongs to the official exercise.",
+      "tasks": [
+        {
+          "id": "preview",
+          "label": "Preview the induction paper and state its main hypothesis"
+        },
+        {
+          "id": "observe",
+          "label": "Work through ARENA 1.2 sections 1–3"
+        },
+        {
+          "id": "replicate",
+          "label": "Reproduce one clearly specified observation or intervention"
+        },
+        {
+          "id": "vary",
+          "label": "Test a variation with controls and fresh examples"
+        },
+        {
+          "id": "reflect",
+          "label": "Separate what you observed from what you inferred"
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "title": "Test a circuit explanation",
+      "subtitle": "Use IOI to learn causal interventions and careful replication.",
+      "kind": "Guide + official exercises",
+      "file": "modules/05_Causal_Circuits.ipynb",
+      "suggestion": "A selected-result replication is the initial target.",
+      "tasks": [
+        {
+          "id": "read",
+          "label": "Read the IOI task definition and chosen method"
+        },
+        {
+          "id": "patch",
+          "label": "Complete ARENA IOI sections 1–3"
+        },
+        {
+          "id": "replicate",
+          "label": "Select and reproduce one result"
+        },
+        {
+          "id": "controls",
+          "label": "Check controls and report setup differences"
+        },
+        {
+          "id": "write",
+          "label": "Write a short replication note"
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "title": "Choose your own question",
+      "subtitle": "Move from guided work into a bounded investigation.",
+      "kind": "Research scaffold",
+      "file": "modules/06_Independent_Experiments.ipynb",
+      "suggestion": "Choose the scope based on your current skills and available compute.",
+      "tasks": [
+        {
+          "id": "question",
+          "label": "Choose a narrow question and inspect prior work"
+        },
+        {
+          "id": "prediction",
+          "label": "State a prediction and a plausible alternative"
+        },
+        {
+          "id": "design",
+          "label": "Specify model, data, metric, and controls"
+        },
+        {
+          "id": "run",
+          "label": "Run a small pilot and decide what to do next"
+        },
+        {
+          "id": "write",
+          "label": "Save a reproducible result with limitations"
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "arena-tensors",
+      "title": "ARENA 0.0 — Tensor manipulation",
+      "author": "ARENA / Callum McDougall",
+      "type": "Exercises",
+      "module": "01",
+      "url": "https://learn.arena.education/chapter0_fundamentals/00_prereqs/2-einops-einsum-tensor-manipulation/",
+      "target": "Read Broadcasting. Use the einops and einsum examples as references when an exercise needs them.",
+      "depth": "Reference as needed",
+      "note": "The local exercises are original practice tasks on the same skills; this link provides the official, broader exercise set."
+    },
+    {
+      "id": "pytorch",
+      "title": "Learn the Basics",
+      "author": "PyTorch",
+      "type": "Tutorial",
+      "module": "02",
+      "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+      "target": "Tensors → Build Model → Autograd → Optimization. Read the relevant section when implementing that component.",
+      "depth": "Selected sections",
+      "note": "Use documentation while coding. API memorization is not a completion requirement."
+    },
+    {
+      "id": "arena-transformer",
+      "title": "ARENA 1.1 — Transformers from scratch",
+      "author": "ARENA / Callum McDougall",
+      "type": "Exercises",
+      "module": "03",
+      "url": "https://learn.arena.education/chapter1_transformer_interp/01_transformers/",
+      "target": "Inputs & Outputs, then Clean Transformer Implementation. Read the basic training loop; defer advanced sampling and caching.",
+      "depth": "Implement core exercises",
+      "note": "Open the page's exercises Colab, not its solutions notebook. The official notebook supplies its own environment setup."
+    },
+    {
+      "id": "framework",
+      "title": "A Mathematical Framework for Transformer Circuits",
+      "author": "Elhage et al. / Anthropic",
+      "type": "Research article",
+      "module": "03",
+      "url": "https://transformer-circuits.pub/2021/framework/index.html",
+      "target": "First pass: Transformer Overview, especially High-Level Architecture and the Residual Stream. Revisit QK/OV and two-layer composition in Module 4.",
+      "depth": "Selected sections, then revisit",
+      "note": "Treat the simplifying assumptions as part of the model being studied, not properties of every transformer."
+    },
+    {
+      "id": "neel",
+      "title": "How To Become A Mechanistic Interpretability Researcher",
+      "author": "Neel Nanda",
+      "type": "Research guidance",
+      "module": "03",
+      "url": "https://www.alignmentforum.org/posts/jP9KDyMkchuv6tHwm/how-to-become-a-mechanistic-interpretability-researcher",
+      "target": "Stage 1 now; mini-project and hypothesis-testing advice when starting Module 6.",
+      "depth": "Skim, revisit later",
+      "note": "The one-month guideline means about 200 working hours in the post's footnote. It is not a part-time calendar deadline."
+    },
+    {
+      "id": "arena-induction",
+      "title": "ARENA 1.2 — TransformerLens & induction circuits",
+      "author": "ARENA / Callum McDougall",
+      "type": "Exercises",
+      "module": "04",
+      "url": "https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/",
+      "target": "Sections 1–3 first: loading and caching, finding induction heads, and hooks. Section 4 is a later deep dive.",
+      "depth": "Core exercises",
+      "note": "The guide and original exercises are linked from the local module. Transformer dependencies are not part of the opening CPU environment."
+    },
+    {
+      "id": "induction",
+      "title": "In-context Learning and Induction Heads",
+      "author": "Olsson et al. / Anthropic",
+      "type": "Paper",
+      "module": "04",
+      "url": "https://arxiv.org/abs/2209.11895",
+      "web": "https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html",
+      "local": "library/papers/induction-heads.pdf",
+      "target": "Preview the introduction and definition of induction heads. For the intervention exercise, study Argument 3 (Direct ablation) and the relevant methods.",
+      "depth": "Preview → selected method",
+      "note": "Distinguish evidence in small attention-only models from broader hypotheses about in-context learning.",
+      "reader": "library/readers/Induction_Heads.ipynb"
+    },
+    {
+      "id": "arena-ioi",
+      "title": "ARENA 1.4.1 — Indirect Object Identification",
+      "author": "ARENA / Callum McDougall",
+      "type": "Exercises",
+      "module": "05",
+      "url": "https://learn.arena.education/chapter1_transformer_interp/21_ioi/",
+      "target": "Sections 1–3 for task setup, attribution, and activation patching. Sections 4–5 deepen the replication.",
+      "depth": "Selected-result replication",
+      "note": "Record which part you reproduced. Completing the introductory exercise is not a full paper replication."
+    },
+    {
+      "id": "ioi",
+      "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+      "author": "Wang et al.",
+      "type": "Paper",
+      "module": "05",
+      "url": "https://arxiv.org/abs/2211.00593",
+      "local": "library/papers/indirect-object-identification.pdf",
+      "target": "Read the task definition, the metric, and the method behind the result you select. Then inspect that result's controls and limitations.",
+      "depth": "Read to reproduce one result",
+      "note": "Choose and record the exact figure or claim before implementing the replication.",
+      "reader": "library/readers/Indirect_Object_Identification.ipynb"
+    },
+    {
+      "id": "superposition",
+      "title": "Toy Models of Superposition",
+      "author": "Elhage et al. / Anthropic",
+      "type": "Paper",
+      "module": "later",
+      "url": "https://arxiv.org/abs/2209.10652",
+      "web": "https://transformer-circuits.pub/2022/toy_model/index.html",
+      "local": "library/papers/toy-models-of-superposition.pdf",
+      "target": "Introduction and toy setup first. Select one small configuration to reproduce if you choose the representations branch.",
+      "depth": "Optional later branch",
+      "note": "A small, controlled setting for investigating what a representation stores.",
+      "reader": "library/readers/Toy_Models_of_Superposition.ipynb"
+    },
+    {
+      "id": "goodfire-llama",
+      "title": "Understanding and Steering Llama 3 with Sparse Autoencoders",
+      "author": "Goodfire",
+      "type": "Research article",
+      "module": "later",
+      "url": "https://www.goodfire.com/research/understanding-and-steering-llama-3",
+      "target": "Read the sparse-autoencoder introduction and one steering example after studying superposition.",
+      "depth": "Optional later reading",
+      "note": "Read the article as an applied example. Its old demo and API were deprecated in February 2026; this assignment does not use them."
+    },
+    {
+      "id": "goodfire-reasoning",
+      "title": "Under the Hood of a Reasoning Model",
+      "author": "Goodfire",
+      "type": "Research article",
+      "module": "later",
+      "url": "https://www.goodfire.com/research/under-the-hood-of-a-reasoning-model",
+      "target": "Preview the main examples, then choose one claim and ask what evidence would distinguish alternatives.",
+      "depth": "Optional research exploration",
+      "note": "A reading assignment, not a promise that a large-model replication fits the opening environment."
+    }
+  ]
+}

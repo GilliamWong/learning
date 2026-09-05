@@ -1,0 +1,33 @@
+{
+  "retrieved_at": "2026-09-05T04:53:04.020163+00:00",
+  "arena_repository": "https://github.com/callummcdougall/ARENA_3.0",
+  "arena_revision_observed": "527f9376b40ad9a12ecd80490884b0009b54dd55",
+  "arena_handling": "Linked official exercises; no upstream exercise code copied into local lessons.",
+  "local_exercises": "Original course exercises with independently written checks.",
+  "papers": [
+    {
+      "title": "In-context Learning and Induction Heads",
+      "path": "library/papers/induction-heads.pdf",
+      "source": "https://arxiv.org/abs/2209.11895",
+      "download_url": "https://arxiv.org/pdf/2209.11895",
+      "bytes": 9957060,
+      "sha256": "9fa4a667e559431efac5bf1d9463f3b0005633e0b78f3ebbacfb901e4ed36e50"
+    },
+    {
+      "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+      "path": "library/papers/indirect-object-identification.pdf",
+      "source": "https://arxiv.org/abs/2211.00593",
+      "download_url": "https://arxiv.org/pdf/2211.00593",
+      "bytes": 1342518,
+      "sha256": "af0ea3ca3912f819d2cd06b0f36f5c20bfcab72fbc83816d830c286af6872c91"
+    },
+    {
+      "title": "Toy Models of Superposition",
+      "path": "library/papers/toy-models-of-superposition.pdf",
+      "source": "https://arxiv.org/abs/2209.10652",
+      "download_url": "https://arxiv.org/pdf/2209.10652",
+      "bytes": 4919189,
+      "sha256": "0acd3e05e40c1b703be3aed15c8cdbd5713a1840df9738b495d2bde2e8eb1e3a"
+    }
+  ]
+}

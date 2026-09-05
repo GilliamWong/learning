@@ -1,0 +1,13 @@
+.venv/
+.cache/
+.runtime/
+**/.ipynb_checkpoints/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+progress.json
+progress.json.bak
+progress.json.corrupt-*
+validation/
+experiments/*
+!experiments/README.md
