@@ -73,9 +73,9 @@
       "id": "03",
       "title": "Inside a transformer",
       "subtitle": "Connect token predictions to the computations inside the model.",
-      "kind": "Guide + official exercises",
+      "kind": "Guide + local ARENA exercises",
       "file": "modules/03_Transformer_Internals.ipynb",
-      "suggestion": "The reading plan is ready. Use ARENA's own notebook for the implementation.",
+      "suggestion": "Continue with the local ARENA 1.1 notebook; use the study plan for reading and coding order.",
       "tasks": [
         {
           "id": "read",
@@ -103,9 +103,9 @@
       "id": "04",
       "title": "Find an induction mechanism",
       "subtitle": "Read a paper with a concrete prediction and experiment in mind.",
-      "kind": "Guide + official exercises",
+      "kind": "Guide + local ARENA exercises",
       "file": "modules/04_Induction_Heads.ipynb",
-      "suggestion": "Start after transformer internals; model setup belongs to the official exercise.",
+      "suggestion": "Use the local ARENA 1.2 notebook and paper reader after transformer internals.",
       "tasks": [
         {
           "id": "preview",
@@ -133,7 +133,7 @@
       "id": "05",
       "title": "Test a circuit explanation",
       "subtitle": "Use IOI to learn causal interventions and careful replication.",
-      "kind": "Guide + official exercises",
+      "kind": "Guide + local ARENA exercises",
       "file": "modules/05_Causal_Circuits.ipynb",
       "suggestion": "A selected-result replication is the initial target.",
       "tasks": [
@@ -200,7 +200,8 @@
       "url": "https://learn.arena.education/chapter0_fundamentals/00_prereqs/2-einops-einsum-tensor-manipulation/",
       "target": "Read Broadcasting. Use the einops and einsum examples as references when an exercise needs them.",
       "depth": "Reference as needed",
-      "note": "The local exercises are original practice tasks on the same skills; this link provides the official, broader exercise set."
+      "note": "The local exercises are original practice tasks on the same skills; this link provides the official, broader exercise set.",
+      "notebook": "arena/notebooks/chapter0_fundamentals/part0_prereqs/0.0_Prerequisites_exercises.ipynb"
     },
     {
       "id": "pytorch",
@@ -220,9 +221,10 @@
       "type": "Exercises",
       "module": "03",
       "url": "https://learn.arena.education/chapter1_transformer_interp/01_transformers/",
-      "target": "Inputs & Outputs, then Clean Transformer Implementation. Read the basic training loop; defer advanced sampling and caching.",
+      "target": "Inputs & Outputs, then Clean Transformer Implementation, a training run, and initial sampling. Advanced beam search and KV caching can wait.",
       "depth": "Implement core exercises",
-      "note": "Open the page's exercises Colab, not its solutions notebook. The official notebook supplies its own environment setup."
+      "note": "Open the local exercise copy with the ARENA (local GPU) kernel. Run its local setup cell first; your answers stay in this workspace.",
+      "notebook": "arena/notebooks/chapter1_transformer_interp/part1_transformer_from_scratch/1.1_Transformer_from_Scratch_exercises.ipynb"
     },
     {
       "id": "framework",
@@ -240,10 +242,10 @@
       "title": "How To Become A Mechanistic Interpretability Researcher",
       "author": "Neel Nanda",
       "type": "Research guidance",
-      "module": "03",
+      "module": "01",
       "url": "https://www.alignmentforum.org/posts/jP9KDyMkchuv6tHwm/how-to-become-a-mechanistic-interpretability-researcher",
-      "target": "Stage 1 now; mini-project and hypothesis-testing advice when starting Module 6.",
-      "depth": "Skim, revisit later",
+      "target": "Skim the opening summary and Stage 1 now. Revisit transformer basics in Module 3; techniques/tooling in Modules 4–5; Stage 2 before a tutorial extension; Stage 3 before longer projects.",
+      "depth": "Brief orientation now; revisit as needed",
       "note": "The one-month guideline means about 200 working hours in the post's footnote. It is not a part-time calendar deadline."
     },
     {
@@ -255,7 +257,8 @@
       "url": "https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/",
       "target": "Sections 1–3 first: loading and caching, finding induction heads, and hooks. Section 4 is a later deep dive.",
       "depth": "Core exercises",
-      "note": "The guide and original exercises are linked from the local module. Transformer dependencies are not part of the opening CPU environment."
+      "note": "Open the local exercise copy with the ARENA (local GPU) kernel. Run its local setup cell first; your answers stay in this workspace.",
+      "notebook": "arena/notebooks/chapter1_transformer_interp/part2_intro_to_mech_interp/1.2_Intro_to_Mech_Interp_exercises.ipynb"
     },
     {
       "id": "induction",
@@ -280,7 +283,8 @@
       "url": "https://learn.arena.education/chapter1_transformer_interp/21_ioi/",
       "target": "Sections 1–3 for task setup, attribution, and activation patching. Sections 4–5 deepen the replication.",
       "depth": "Selected-result replication",
-      "note": "Record which part you reproduced. Completing the introductory exercise is not a full paper replication."
+      "note": "Record which part you reproduced. Completing the introductory exercise is not a full paper replication.",
+      "notebook": "arena/notebooks/chapter1_transformer_interp/part41_indirect_object_identification/1.4.1_Indirect_Object_Identification_exercises.ipynb"
     },
     {
       "id": "ioi",

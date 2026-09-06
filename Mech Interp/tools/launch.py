@@ -42,6 +42,8 @@ def ready(info):
 
 
 def configure_environment():
+    # Browser kernels keep JupyterLab navigation even when launched from a VS Code terminal.
+    os.environ.pop("MECH_INTERP_FRONTEND", None)
     for name, relative in {
         "JUPYTER_CONFIG_DIR": "jupyter/config", "JUPYTER_DATA_DIR": "jupyter/data",
         "JUPYTER_RUNTIME_DIR": "jupyter/runtime", "IPYTHONDIR": "ipython", "MPLCONFIGDIR": "matplotlib",
@@ -50,6 +52,11 @@ def configure_environment():
         path.mkdir(parents=True, exist_ok=True)
         os.environ[name] = str(path)
     os.environ["PYTHONUTF8"] = "1"
+    # Local reading guides should open as pages. Preserve any later user choice.
+    viewers = RUNTIME / "jupyter/config/lab/user-settings/@jupyterlab/docmanager-extension/plugin.jupyterlab-settings"
+    if not viewers.exists():
+        viewers.parent.mkdir(parents=True, exist_ok=True)
+        viewers.write_text(json.dumps({"defaultViewers": {"markdown": "Markdown Preview"}}, indent=2), encoding="utf-8")
 
 
 def serve():

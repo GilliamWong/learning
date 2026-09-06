@@ -1,0 +1,17 @@
+[
+  {
+    "file": "chapter0_fundamentals/exercises/part3_optimization/solutions.py",
+    "reason": "Supply the required world_size argument in the optional ring-all-reduce test call; distributed execution remains deferred.",
+    "current_sha256": "1a6ae38ee0c5e584196efc179037dc3e220a86bef71b191a92336654aa260bb8"
+  },
+  {
+    "file": "chapter2_rl/exercises/part5_mcts_alphazero/solutions.py",
+    "reason": "Align sampled-action shape with Connect4Env and the provided test: (batch,).",
+    "current_sha256": "bf354a837ec939a414e26a4bbe030ea47e8066d84f990e89ebb1996a76cb8032"
+  },
+  {
+    "file": "chapter3_llm_evals/exercises/part5_ai_control/solutions.py",
+    "reason": "Use the active Python and relative sandbox files in the explicit local test branch; keep Docker as the default.",
+    "current_sha256": "3ba8a4355eeb44ed1f3c686010b2dd212007f55935648409d381b324246ed7fc"
+  }
+]

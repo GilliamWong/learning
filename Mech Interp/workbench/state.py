@@ -66,15 +66,16 @@ class Progress:
         self.update(lambda data: data.setdefault("reading", {}).__setitem__(key, value))
 
 
-def new_notebook(template, folder):
+def new_notebook(template, folder, root=ROOT):
     """Copy a blank template without modifying it or overwriting existing work."""
     if (template, folder) not in {("Experiment.ipynb", "experiments"), ("Paper_Notes.ipynb", "notes")}:
         raise ValueError("Unknown template")
-    target = ROOT / folder
+    root = Path(root)
+    target = root / folder
     target.mkdir(exist_ok=True)
     filename = f"{datetime.now():%Y-%m-%d_%H%M%S}_{uuid4().hex[:4]}_{template}"
     output = target / filename
-    shutil.copyfile(ROOT / "templates" / template, output)
-    relative = output.relative_to(ROOT).as_posix()
-    Progress().update(lambda data: data.setdefault("created", []).append(relative))
+    shutil.copyfile(root / "templates" / template, output)
+    relative = output.relative_to(root).as_posix()
+    Progress(root).update(lambda data: data.setdefault("created", []).append(relative))
     return relative

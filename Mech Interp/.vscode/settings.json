@@ -1,0 +1,19 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.envFile": "${workspaceFolder}/.vscode/learning.env",
+  "workbench.externalUriOpeners": {
+    "https://*": "simpleBrowser.open",
+    "http://*": "simpleBrowser.open"
+  },
+  "files.exclude": {
+    "**/.venv": true,
+    "**/.cache": true,
+    "**/.runtime": true,
+    "**/__pycache__": true
+  },
+  "search.exclude": {
+    "arena/ARENA_3.0": true,
+    "arena/validation/executed": true,
+    "arena/validation/sequential": true
+  }
+}

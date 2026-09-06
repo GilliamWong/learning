@@ -1,0 +1,25 @@
+[project]
+name = "arena-sae-circuits"
+version = "0.1.0"
+description = "Separate dependency versions required by ARENA 1.4.2."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "torch==2.8.0", "torchvision==0.23.0", "transformer-lens==2.17.0",
+  "transformers>=4.56,<=4.57.3", "nnsight==0.6.1", "einops>=0.8,<1",
+  "sae-lens==6.50.0", "numpy==1.26.4", "plotly==5.24.1",
+  "circuit-tracer", "python-dotenv", "rich", "tabulate", "eindex-callum",
+  "ipykernel>=6.29.5,<7", "ipywidgets>=8.1,<9", "nbformat", "nbclient",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+circuit-tracer = { path = "../ARENA_3.0/chapter1_transformer_interp/exercises/circuit-tracer", editable = true }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

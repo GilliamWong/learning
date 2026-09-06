@@ -1,0 +1,10 @@
+.venv/
+.cache/
+.env
+**/.ipynb_checkpoints/
+**/__pycache__/
+ARENA_3.0/
+validation/executed/
+validation/logs/
+validation/sequential/*.ipynb
+outputs/

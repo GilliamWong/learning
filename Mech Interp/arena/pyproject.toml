@@ -1,0 +1,81 @@
+[project]
+name = "arena-local-course"
+version = "0.1.0"
+description = "Pinned local environment for the imported ARENA notebooks."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "torch==2.8.0",
+  "torchvision==0.23.0",
+  "torchaudio==2.8.0",
+  "transformer-lens==2.17.0",
+  "transformers==4.51.3",
+  "sae-lens>=6.37.4,<7",
+  "nnsight==0.4.11",
+  "peft==0.15.2",
+  "datasets==3.6.0",
+  "huggingface-hub>=0.30,<1",
+  "safetensors",
+  "numpy==1.26.4",
+  "pandas==2.2.3",
+  "scipy>=1.13,<1.17",
+  "einops>=0.7,<1",
+  "eindex-callum",
+  "jaxtyping",
+  "typeguard",
+  "torchinfo",
+  "scikit-learn",
+  "numpy-stl",
+  "hdbscan",
+  "umap-learn",
+  "plotly==5.24.1",
+  "matplotlib>=3.9,<4",
+  "circuitsvis",
+  "neel-plotly",
+  "sae-vis==0.3.7",
+  "gymnasium[classic-control]==0.29.0",
+  "mujoco>=3.2,<4",
+  "imageio-ffmpeg",
+  "mediapy",
+  "openai>=1.58.1,<2",
+  "anthropic>=0.42,<1",
+  "inspect-ai>=0.3.200,<0.4",
+  "instructor>=1.7,<2",
+  "wikipedia",
+  "python-dotenv",
+  "httpx",
+  "pyngrok",
+  "wandb>=0.18,<0.20",
+  "rich",
+  "tabulate",
+  "tqdm",
+  "ftfy",
+  "gdown",
+  "frozendict",
+  "portalocker",
+  "ipykernel",
+  "ipywidgets>=8.1,<9",
+  "nbformat",
+  "nbclient",
+  "pytest",
+  "opencv-python<4.12",
+  "sentence-transformers",
+  "diffusers",
+  "bitsandbytes",
+  "petri",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+circuitsvis = { git = "https://github.com/callummcdougall/CircuitsVis.git", subdirectory = "python" }
+neel-plotly = { git = "https://github.com/neelnanda-io/neel-plotly.git" }
+petri = { path = "ARENA_3.0/chapter4_alignment_science/exercises/petri", editable = true }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

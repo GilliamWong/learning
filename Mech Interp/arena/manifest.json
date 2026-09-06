@@ -1,0 +1,1072 @@
+{
+  "upstream": "https://github.com/callummcdougall/ARENA_3.0",
+  "revision": "527f9376b40ad9a12ecd80490884b0009b54dd55",
+  "imported_at": "2026-09-06T09:09:19.767044+00:00",
+  "paid_api_calls": "manual",
+  "notebooks": [
+    {
+      "source": "chapter0_fundamentals/exercises/part0_prereqs/0.0_Prerequisites_exercises.ipynb",
+      "local": "arena/notebooks/chapter0_fundamentals/part0_prereqs/0.0_Prerequisites_exercises.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "exercise",
+      "title": "0.0 Prerequisites exercises",
+      "source_sha256": "f5b8f50b2de602d7ab3115e3c3078228d49b961b7d170cd3d2d5d61431a6cd62",
+      "imported_sha256": "a20fb7d1f6883a52e3c907f58ea60b4c25ce02bc9e02059b5d4107f3efe212fb",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part0_prereqs/0.0_Prerequisites_solutions.ipynb",
+      "local": "arena/reference/chapter0_fundamentals/part0_prereqs/0.0_Prerequisites_solutions.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "solution",
+      "title": "0.0 Prerequisites solutions",
+      "source_sha256": "5df54a031ff149d8eb48c93c70542f26451df8679dd6c2986c1a4757a1d3dd0b",
+      "imported_sha256": "097d1ada059b406ed8011d82f76f046744bec8082c73aa0b3ff267e1d52e0f19",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part1_ray_tracing/0.1_Ray_Tracing_exercises.ipynb",
+      "local": "arena/notebooks/chapter0_fundamentals/part1_ray_tracing/0.1_Ray_Tracing_exercises.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "exercise",
+      "title": "0.1 Ray Tracing exercises",
+      "source_sha256": "e5d782a29ce4de9ff6f85b424681c90f6c5082d107006f40d9599be14ec8c3e6",
+      "imported_sha256": "1bcaf4d7aaadd9f699d94932ef51a3a9e248430df9e24b3ec74b1dfcb5517668",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part1_ray_tracing/0.1_Ray_Tracing_solutions.ipynb",
+      "local": "arena/reference/chapter0_fundamentals/part1_ray_tracing/0.1_Ray_Tracing_solutions.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "solution",
+      "title": "0.1 Ray Tracing solutions",
+      "source_sha256": "a8b3f19a47c0dbd8e55c4b9a3676ea370cea9bcc73820d58a34545dc79e10af2",
+      "imported_sha256": "0cd3fe245920f6f499502e3b53b1b59d53e2c52b0289f7ba0c85db8772037b36",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part2_cnns/0.2_CNNs_&_ResNets_exercises.ipynb",
+      "local": "arena/notebooks/chapter0_fundamentals/part2_cnns/0.2_CNNs_&_ResNets_exercises.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "exercise",
+      "title": "0.2 CNNs & ResNets exercises",
+      "source_sha256": "d624909bb17d0d25684fd1a5a485dc1f790412d09fb37e17422d660d759060cf",
+      "imported_sha256": "ab2d384bb11debcbad4e66460359247f1cda4dfb4f9843d06777347d02114c71",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part2_cnns/0.2_CNNs_&_ResNets_solutions.ipynb",
+      "local": "arena/reference/chapter0_fundamentals/part2_cnns/0.2_CNNs_&_ResNets_solutions.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "solution",
+      "title": "0.2 CNNs & ResNets solutions",
+      "source_sha256": "f6f51aba4469a8ef4281d8982bf34d6d23db70e92ef5f912555ab513f4e4fb60",
+      "imported_sha256": "0fa90e576d2e9f32c62c492df63715356a7c059a7feba50467bfb4e11b4abbf1",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part3_optimization/0.3_Optimization_exercises.ipynb",
+      "local": "arena/notebooks/chapter0_fundamentals/part3_optimization/0.3_Optimization_exercises.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "exercise",
+      "title": "0.3 Optimization exercises",
+      "source_sha256": "623d3e65526e52cef48aaebf7026c2bf77746fb2411b5b8be360b269f506b28c",
+      "imported_sha256": "8f919e77ed1bb42b8ec738a3295b288c79d793fcbb0ea3ee3fb29a5ba7ead340",
+      "adaptations": [
+        "Apply the documented reference shape or Windows sandbox compatibility repair.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part3_optimization/0.3_Optimization_solutions.ipynb",
+      "local": "arena/reference/chapter0_fundamentals/part3_optimization/0.3_Optimization_solutions.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "solution",
+      "title": "0.3 Optimization solutions",
+      "source_sha256": "12231f58da916f42246d9abb433cb8bfb40906584444a343262c0a1e50f845e4",
+      "imported_sha256": "a5f20a44f80f2230b51019cb8dc0088e377d9256f04ef441d3a8da2db30ed480",
+      "adaptations": [
+        "Apply the documented reference shape or Windows sandbox compatibility repair.",
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use num_workers=0 for Windows notebook data loading."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part4_backprop/0.4_Backprop_exercises.ipynb",
+      "local": "arena/notebooks/chapter0_fundamentals/part4_backprop/0.4_Backprop_exercises.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "exercise",
+      "title": "0.4 Backprop exercises",
+      "source_sha256": "ec95dca7593ffe8ba9355dfcbd33403f83104f7d2beee0764f0d184123550ccf",
+      "imported_sha256": "c6905e7a3bb572bef2efd97a1c29d4408fa485fb2015455976bc0f81b7fc3170",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part4_backprop/0.4_Backprop_solutions.ipynb",
+      "local": "arena/reference/chapter0_fundamentals/part4_backprop/0.4_Backprop_solutions.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "solution",
+      "title": "0.4 Backprop solutions",
+      "source_sha256": "792a753f6f294a0d275ea0441c2895b2f4d85a30ebe5dfcbb7352c864cb0eb3c",
+      "imported_sha256": "2b1919704aeb991ad37313763d170d7227e09adac98d722c1bf57152d5f3452a",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part5_vaes_and_gans/0.5_VAEs_&_GANs_exercises.ipynb",
+      "local": "arena/notebooks/chapter0_fundamentals/part5_vaes_and_gans/0.5_VAEs_&_GANs_exercises.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "exercise",
+      "title": "0.5 VAEs & GANs exercises",
+      "source_sha256": "d6541d23a345b672d8489e58bc72340af8bfdc1dea203a5dc3e8a070d06eeec9",
+      "imported_sha256": "9b5fba630f4e9021906d38b06b163f1c41ad1e8d8bd331cb22b408c94a21c2a2",
+      "adaptations": [
+        "Repaired malformed placeholder or indentation; exercise remains unanswered.",
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use num_workers=0 for Windows notebook data loading."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter0_fundamentals/exercises/part5_vaes_and_gans/0.5_VAEs_&_GANs_solutions.ipynb",
+      "local": "arena/reference/chapter0_fundamentals/part5_vaes_and_gans/0.5_VAEs_&_GANs_solutions.ipynb",
+      "chapter": "chapter0_fundamentals",
+      "kind": "solution",
+      "title": "0.5 VAEs & GANs solutions",
+      "source_sha256": "7f8956e112a6bba65e7cdc65519a12eaf32cebfc369cafff01f6b92f0eb1886a",
+      "imported_sha256": "3d438e726542c041cb71e081c1aed7dbe756c833565ebcb532f80790d12d2049",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use num_workers=0 for Windows notebook data loading."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/monthly_algorithmic_problems/august23_unique_char/training_model.ipynb",
+      "local": "arena/additional/chapter1_transformer_interp/monthly_algorithmic_problems/august23_unique_char/training_model.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "additional",
+      "title": "training model",
+      "source_sha256": "54a6299c0c8f51253cf4ab0a52033abb788c715fdd4577e2c11eb94aa31a8339",
+      "imported_sha256": "d7ccf5ae14de5b2e0285054d9fb5ba3d7abe31e5f7be169533ae4b4c26b77ae4",
+      "adaptations": [],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/monthly_algorithmic_problems/january24_caesar_cipher/training_model.ipynb",
+      "local": "arena/additional/chapter1_transformer_interp/monthly_algorithmic_problems/january24_caesar_cipher/training_model.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "additional",
+      "title": "training model",
+      "source_sha256": "ead77e10cb17cf9b082dda629b8df6f9d231cd9357c5f579252a83ffe398526f",
+      "imported_sha256": "fea6d5885fe7d60a7eba7c2919ca7f075b88e8cf7eee5a81dde86d1f7f2f4c5a",
+      "adaptations": [],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/monthly_algorithmic_problems/july23_palindromes/training_model.ipynb",
+      "local": "arena/additional/chapter1_transformer_interp/monthly_algorithmic_problems/july23_palindromes/training_model.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "additional",
+      "title": "training model",
+      "source_sha256": "3b9d0f827d014257dbe4a4a4fd6b02e3915c7b4b17f9dee439abb28d1a881bfe",
+      "imported_sha256": "e48dfc7933bc85f22d677ff7ef8a34e8fe3ed377855efcf938a3004dc16037c4",
+      "adaptations": [],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/monthly_algorithmic_problems/november23_cumsum/training_model.ipynb",
+      "local": "arena/additional/chapter1_transformer_interp/monthly_algorithmic_problems/november23_cumsum/training_model.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "additional",
+      "title": "training model",
+      "source_sha256": "e71650037d4580c1b94fb806e6281722660c56a5512906ab92361cbcb323875f",
+      "imported_sha256": "a19d7f4eba985621f53037c0ddde325d526bc04b8b1fd48e34d3c9a32dd032ac",
+      "adaptations": [],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/monthly_algorithmic_problems/november24_trigrams/training_model.ipynb",
+      "local": "arena/additional/chapter1_transformer_interp/monthly_algorithmic_problems/november24_trigrams/training_model.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "additional",
+      "title": "training model",
+      "source_sha256": "3107decd813e50334adb6f0a158f735d12973dc2f4b037ce6bdeb409dfbdb1da",
+      "imported_sha256": "3b02f8ada632f99a90163826792ebb17d13531e9846ed4252495d81965caae06",
+      "adaptations": [],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/monthly_algorithmic_problems/october23_sorted_list/training_model.ipynb",
+      "local": "arena/additional/chapter1_transformer_interp/monthly_algorithmic_problems/october23_sorted_list/training_model.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "additional",
+      "title": "training model",
+      "source_sha256": "1848fdb239592b1c67e362b05a62bd8f9d7445dc1d454016efa5a60f210919e9",
+      "imported_sha256": "d82ab4a6d12f8837ab8a4377bce1ec6d72a5cdc5558b88dd8bc4afd917e84fb3",
+      "adaptations": [],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/monthly_algorithmic_problems/september23_sum/training_model.ipynb",
+      "local": "arena/additional/chapter1_transformer_interp/monthly_algorithmic_problems/september23_sum/training_model.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "additional",
+      "title": "training model",
+      "source_sha256": "220dbb17898d23a9943b5562702d678e07888dd0aa1984d7376a53716aeccec5",
+      "imported_sha256": "f334d54077c1911058f38a134c9836ecb96101749c34fa44dc66d2ecae8cc586",
+      "adaptations": [],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part1_transformer_from_scratch/1.1_Transformer_from_Scratch_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part1_transformer_from_scratch/1.1_Transformer_from_Scratch_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.1 Transformer from Scratch exercises",
+      "source_sha256": "c793157f20ec5931c75142fe1669267582a7c4e4f31e43c0173d55a2c5866e38",
+      "imported_sha256": "71df04c7dd7a88abca08f85599ef8054abe87520a11604615bca5912c04cc381",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use num_workers=0 for Windows notebook data loading."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part1_transformer_from_scratch/1.1_Transformer_from_Scratch_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part1_transformer_from_scratch/1.1_Transformer_from_Scratch_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.1 Transformer from Scratch solutions",
+      "source_sha256": "f907cf6343026d2fdc1030e986ecb4a2627b58f3e26ed6842b8fac06c7614caf",
+      "imported_sha256": "711753cdb8ade5f376dbfb23568deec838785044905bde07581651228c624438",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use num_workers=0 for Windows notebook data loading."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part2_intro_to_mech_interp/1.2_Intro_to_Mech_Interp_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part2_intro_to_mech_interp/1.2_Intro_to_Mech_Interp_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.2 Intro to Mech Interp exercises",
+      "source_sha256": "25960e75c235f7734e2cadb2d1179d48778f21e581562de9b8276b67a8d299a5",
+      "imported_sha256": "a5593de0a3271751718470ad5d5324d138dfbfbc3d3e373a96054cb730d40814",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part2_intro_to_mech_interp/1.2_Intro_to_Mech_Interp_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part2_intro_to_mech_interp/1.2_Intro_to_Mech_Interp_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.2 Intro to Mech Interp solutions",
+      "source_sha256": "c6a4af96a0a86ac3388fc111a489424aabeec53485c373e164eb3348fbf836ff",
+      "imported_sha256": "2eeab7cba65b405d604e23e3689fe8e757121d1744d6964193237611543d0931",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part31_linear_probes/1.3.1_Linear_Probes_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part31_linear_probes/1.3.1_Linear_Probes_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.3.1 Linear Probes exercises",
+      "source_sha256": "871e15daf7766e8bff4547089e28e69271fd52b5be0a81c2ee87f17988f9ce90",
+      "imported_sha256": "7ac939ede682c8c6a55351eda385060f73db109bd074ddde6a43d3b58dcc46a5",
+      "adaptations": [
+        "Repaired malformed placeholder or indentation; exercise remains unanswered.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part31_linear_probes/1.3.1_Linear_Probes_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part31_linear_probes/1.3.1_Linear_Probes_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.3.1 Linear Probes solutions",
+      "source_sha256": "470b73208f7dd48fab22ebdf493ac40820d9ac0c1f18fd8eecea3b53f7249fda",
+      "imported_sha256": "0e98502840976ca2fbd44b8f9076e264ee4662f676bf162c8ae5088d89fa909d",
+      "adaptations": [
+        "Repaired malformed placeholder or indentation; exercise remains unanswered.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part32_function_vectors_and_model_steering/1.3.2_Function_Vectors_&_Model_Steering_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part32_function_vectors_and_model_steering/1.3.2_Function_Vectors_&_Model_Steering_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.3.2 Function Vectors & Model Steering exercises",
+      "source_sha256": "1df1bb611d37ef09eb126e16759c2327faec8ba01961d4a28125b09b77fd6f2c",
+      "imported_sha256": "b92daf22a530e49408e10b9be0a3c6b0cf97a7299c6eac7e81a2b4b40ff3d384",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part32_function_vectors_and_model_steering/1.3.2_Function_Vectors_&_Model_Steering_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part32_function_vectors_and_model_steering/1.3.2_Function_Vectors_&_Model_Steering_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.3.2 Function Vectors & Model Steering solutions",
+      "source_sha256": "f5ada49c4e9ecb77b7ed93656d4265556c4b3acbb89a50388851808c62c6768e",
+      "imported_sha256": "304176d9acb8bfc0562c6c128fe071e13e9b0911f0e6af74c9758f4260601ed8",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part33_interp_with_saes/1.3.3_Interpretability_with_SAEs_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part33_interp_with_saes/1.3.3_Interpretability_with_SAEs_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.3.3 Interpretability with SAEs exercises",
+      "source_sha256": "7b248a36ab5e820c2db5834e38e3710314e3f97f770df4fd578630f1852bc029",
+      "imported_sha256": "cefcc13a0767c7059fb2dc8436743096dee3db55fcf9449c4becb6d47f9830cc",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part33_interp_with_saes/1.3.3_Interpretability_with_SAEs_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part33_interp_with_saes/1.3.3_Interpretability_with_SAEs_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.3.3 Interpretability with SAEs solutions",
+      "source_sha256": "4dcf056e36da038ef3d2e45e30d1ed6b38bf456858adad6de16c97eabcd47ad4",
+      "imported_sha256": "2245361305ccd47b1a9b7a932a380d0011defa0082305c8bf69bbfbddf2d6e0a",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part34_activation_oracles/1.3.4_Activation_Oracles_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part34_activation_oracles/1.3.4_Activation_Oracles_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.3.4 Activation Oracles exercises",
+      "source_sha256": "63bdc35b80a2ace00bccb9a2f24153291f65bf0a616a16699d3f2ffec5fd0bac",
+      "imported_sha256": "975ba12d874628fb0b42bc2284e832b476398e4428447e05455bf58383f47677",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part34_activation_oracles/1.3.4_Activation_Oracles_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part34_activation_oracles/1.3.4_Activation_Oracles_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.3.4 Activation Oracles solutions",
+      "source_sha256": "c4fd1144fdd04e4113fa48fec9253a0c1156a7ad8d28be3e3a70e4e1cfa210cb",
+      "imported_sha256": "624c53cf23556fcc546dcf2455a3b09dee4adac2927cd0ed63705fa28f8012c8",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part41_indirect_object_identification/1.4.1_Indirect_Object_Identification_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part41_indirect_object_identification/1.4.1_Indirect_Object_Identification_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.4.1 Indirect Object Identification exercises",
+      "source_sha256": "6231623482653999378970e0886dad5d31d3107854a779be6f8b0912251ce5b7",
+      "imported_sha256": "163c2e63b9b408429262a5c3200ef3553e631bafd903b4764266c670f9f74758",
+      "adaptations": [
+        "Repaired malformed placeholder or indentation; exercise remains unanswered.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part41_indirect_object_identification/1.4.1_Indirect_Object_Identification_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part41_indirect_object_identification/1.4.1_Indirect_Object_Identification_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.4.1 Indirect Object Identification solutions",
+      "source_sha256": "475c4029a11b213ff02d17cf9839c29039797dd4ed2a0d2906c02767f4473f3e",
+      "imported_sha256": "2aa285fef60d482c66d6d57109b74359b4c9b7f093c6304bf94d22dbe2c0da2b",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part42_sae_circuits/1.4.2_SAE_Circuits_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part42_sae_circuits/1.4.2_SAE_Circuits_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.4.2 SAE Circuits exercises",
+      "source_sha256": "d6f6c3705f71cc6588630417627474fcb3a2e88cc318dd79bf1fb86a5ba00237",
+      "imported_sha256": "ed9fc6cac9c758f3692df52c508b7a5d2c8a6626c5e54a36ad69237b63841cba",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part42_sae_circuits/1.4.2_SAE_Circuits_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part42_sae_circuits/1.4.2_SAE_Circuits_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.4.2 SAE Circuits solutions",
+      "source_sha256": "7d76ebe8d2501f52fa6b554c1196211510accb203b31a717a2b169964fab752b",
+      "imported_sha256": "ac80b21a1d2b18f354fa93ed2506b341244fbacbf17f403ee6217d900e9f96e7",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part51_balanced_bracket_classifier/1.5.1_Balanced_Bracket_Classifier_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part51_balanced_bracket_classifier/1.5.1_Balanced_Bracket_Classifier_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.5.1 Balanced Bracket Classifier exercises",
+      "source_sha256": "956224441794e0d19da804439d31ac16fc48f5078daa83061b552972d85875a7",
+      "imported_sha256": "e6539eee2b5087dc3a5ca9346cebaa84b03128afb92b5b3300b8dd6a5e1b7e68",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part51_balanced_bracket_classifier/1.5.1_Balanced_Bracket_Classifier_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part51_balanced_bracket_classifier/1.5.1_Balanced_Bracket_Classifier_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.5.1 Balanced Bracket Classifier solutions",
+      "source_sha256": "810ed034ff2f44c0e0759984074acfc1594abf784741823acfe09fc2392d1d29",
+      "imported_sha256": "ef190dae8f67e1a4d2de5030ec65f974cbd1760236dea60049ad1a430fdf503e",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part52_grokking_and_modular_arithmetic/1.5.2_Grokking_&_Modular_Arithmetic_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part52_grokking_and_modular_arithmetic/1.5.2_Grokking_&_Modular_Arithmetic_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.5.2 Grokking & Modular Arithmetic exercises",
+      "source_sha256": "06f63ed7066649b5d41254b17a04de3da871ba1b9433f80d9385e622b8928874",
+      "imported_sha256": "d5200abba5fdb87d1ba01c6264ef3af82e57051c637888836f27b2b3b0723ef0",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part52_grokking_and_modular_arithmetic/1.5.2_Grokking_&_Modular_Arithmetic_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part52_grokking_and_modular_arithmetic/1.5.2_Grokking_&_Modular_Arithmetic_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.5.2 Grokking & Modular Arithmetic solutions",
+      "source_sha256": "eb0e9ea02f615ead6e04125537fb6b84ffe7cc4a4261c9e1f516e7f5ee95e087",
+      "imported_sha256": "b8b18df908f5250b83458f20920272ae61d0424254789a49392fa368ad70ff3c",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part53_othellogpt/1.5.3_OthelloGPT_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part53_othellogpt/1.5.3_OthelloGPT_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.5.3 OthelloGPT exercises",
+      "source_sha256": "5668ff40fa5ed6f003738ccd407b3f65d50dbacf73a34253f0abe03f73b3ad99",
+      "imported_sha256": "3332303f087b4a2bc3fe3c86aef73ab4aa0c38ba1f57ed24a4f77cf36b9c9491",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part53_othellogpt/1.5.3_OthelloGPT_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part53_othellogpt/1.5.3_OthelloGPT_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.5.3 OthelloGPT solutions",
+      "source_sha256": "56ccf0fde099164c1ed4bf60fd24ca41e32eb11992211014310deb3a69527e03",
+      "imported_sha256": "4b911a23961be4785b1431d7389e5ab83c27087151d2fffacb79e88bbcc7d0a7",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part54_toy_models_of_superposition_and_saes/1.5.4_Toy_Models_of_Superposition_&_SAEs_exercises.ipynb",
+      "local": "arena/notebooks/chapter1_transformer_interp/part54_toy_models_of_superposition_and_saes/1.5.4_Toy_Models_of_Superposition_&_SAEs_exercises.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "exercise",
+      "title": "1.5.4 Toy Models of Superposition & SAEs exercises",
+      "source_sha256": "20c1cfd6ef58e1a244a4fb42ca7d68c8b787b327b79cb1d4df147f40bffead29",
+      "imported_sha256": "36bf9c4dcaa76c3c5d17e6934c899f761131a1bbba4b8c5595e4d3697092417d",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter1_transformer_interp/exercises/part54_toy_models_of_superposition_and_saes/1.5.4_Toy_Models_of_Superposition_&_SAEs_solutions.ipynb",
+      "local": "arena/reference/chapter1_transformer_interp/part54_toy_models_of_superposition_and_saes/1.5.4_Toy_Models_of_Superposition_&_SAEs_solutions.ipynb",
+      "chapter": "chapter1_transformer_interp",
+      "kind": "solution",
+      "title": "1.5.4 Toy Models of Superposition & SAEs solutions",
+      "source_sha256": "ac5c0b01ab41631e79d8b14c945a127908adc7d5a2517690d6ab3cebb500d036",
+      "imported_sha256": "aa8c8744dc875eca01851194f1edcac1b811015822ed001b1ef2de943a8677bd",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part1_intro_to_rl/2.1_Intro_to_RL_exercises.ipynb",
+      "local": "arena/notebooks/chapter2_rl/part1_intro_to_rl/2.1_Intro_to_RL_exercises.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "exercise",
+      "title": "2.1 Intro to RL exercises",
+      "source_sha256": "cd38d915e884d888c6a8c1336efe654d252c79fe3640612e2eef5f17bbbb2546",
+      "imported_sha256": "f9e75102f87330bfbb3c490f55e7a9fe0ef35dcc97b6b45450488f8b0d6d3b57",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part1_intro_to_rl/2.1_Intro_to_RL_solutions.ipynb",
+      "local": "arena/reference/chapter2_rl/part1_intro_to_rl/2.1_Intro_to_RL_solutions.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "solution",
+      "title": "2.1 Intro to RL solutions",
+      "source_sha256": "c6c5bde48d1578b68798544665c88d62ba30f971ca8f999f3712e5f3ecb020a1",
+      "imported_sha256": "9a48c6f25175b2ecff1ce8293c14b993087c69050638db788d6a88f57901bb56",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part21_dqn/2.2.1_DQN_exercises.ipynb",
+      "local": "arena/notebooks/chapter2_rl/part21_dqn/2.2.1_DQN_exercises.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "exercise",
+      "title": "2.2.1 DQN exercises",
+      "source_sha256": "826bb05d5bc161689d1ddbf864e39082714f5295a4940288f3f084471c1e225c",
+      "imported_sha256": "d5b5b539683980340f8f376dc60b69405a4d08a9ca63cd252a1613e09174c02e",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part21_dqn/2.2.1_DQN_solutions.ipynb",
+      "local": "arena/reference/chapter2_rl/part21_dqn/2.2.1_DQN_solutions.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "solution",
+      "title": "2.2.1 DQN solutions",
+      "source_sha256": "14fb60afbe01922b7828fda1250f61b1c30b87f933ea6ca4ece87ec62b1116dd",
+      "imported_sha256": "07306abc36090562ea574a6b695924b9d6bfbe66a60f4ea79ed07c0d7f86713b",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part22_vpg/2.2.2_VPG_exercises.ipynb",
+      "local": "arena/notebooks/chapter2_rl/part22_vpg/2.2.2_VPG_exercises.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "exercise",
+      "title": "2.2.2 VPG exercises",
+      "source_sha256": "69ab60b8b3e0869ae1fdbfb7b61f7eef87778518a7d9e10e978dcc19a68d3ab8",
+      "imported_sha256": "b7638c354fab9573243a9a087fcaec6f543b738e466dd8c2fe157ae1f40cd3e7",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part22_vpg/2.2.2_VPG_solutions.ipynb",
+      "local": "arena/reference/chapter2_rl/part22_vpg/2.2.2_VPG_solutions.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "solution",
+      "title": "2.2.2 VPG solutions",
+      "source_sha256": "94f2b19cb26e728be57a5290665e4232cfce096e11c648dd1d6f333d420da3de",
+      "imported_sha256": "8eaaf41338eb1e67618cfcdcad6c958f880c6120bbf634ab1d3e12e2cf5bde0e",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part3_ppo/2.3_PPO_exercises.ipynb",
+      "local": "arena/notebooks/chapter2_rl/part3_ppo/2.3_PPO_exercises.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "exercise",
+      "title": "2.3 PPO exercises",
+      "source_sha256": "c97725f7e37e9caea80d4110f2255487e1af337cbe1985c13e3079d2f39345c3",
+      "imported_sha256": "72db799aad07c53607cc7a6ccd74354c1d81f0f2f5b83502fa82b363e2edde9d",
+      "adaptations": [
+        "Removed in-notebook package installation to preserve the locked environment.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part3_ppo/2.3_PPO_solutions.ipynb",
+      "local": "arena/reference/chapter2_rl/part3_ppo/2.3_PPO_solutions.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "solution",
+      "title": "2.3 PPO solutions",
+      "source_sha256": "b9e610dfb2e1c4b81d5d13eba5bab40687a4456134b9d38dc5930d1dfb2ca7f6",
+      "imported_sha256": "29fbfe7480774b57aca5fdeb9643fd2d919d3831bdd7344cab932a8c4d467bc4",
+      "adaptations": [
+        "Removed in-notebook package installation to preserve the locked environment.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part4_rlhf/2.4_RLHF_exercises.ipynb",
+      "local": "arena/notebooks/chapter2_rl/part4_rlhf/2.4_RLHF_exercises.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "exercise",
+      "title": "2.4 RLHF exercises",
+      "source_sha256": "ae7f3fff9addadd51754a447fe28f36339da2e2c4afddef61c24c30c35102131",
+      "imported_sha256": "77de4866023d7d36ef791eae8bc77b2660fe8464dd7a399b3a263ef55f9fe8fa",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part4_rlhf/2.4_RLHF_solutions.ipynb",
+      "local": "arena/reference/chapter2_rl/part4_rlhf/2.4_RLHF_solutions.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "solution",
+      "title": "2.4 RLHF solutions",
+      "source_sha256": "cd897f51e71c6990183304d28b624146366f907b8416deb18eca1f8918ec401a",
+      "imported_sha256": "f3448ddcb2def563f1cc422cf87b9446e6e576ada90a78e1b2f322d2103a81d7",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part5_mcts_alphazero/2.5_MCTS_&_AlphaZero_exercises.ipynb",
+      "local": "arena/notebooks/chapter2_rl/part5_mcts_alphazero/2.5_MCTS_&_AlphaZero_exercises.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "exercise",
+      "title": "2.5 MCTS & AlphaZero exercises",
+      "source_sha256": "15186a01c8118cd0f2ce5adb936486268f1d66a0e1f72fce44b7c32bf4c3d1af",
+      "imported_sha256": "4d15f62f28e9f93b72dd38f4c60230bfae6e6ad609e80baa11e1bd55faf61e5a",
+      "adaptations": [
+        "Apply the documented reference shape or Windows sandbox compatibility repair."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter2_rl/exercises/part5_mcts_alphazero/2.5_MCTS_&_AlphaZero_solutions.ipynb",
+      "local": "arena/reference/chapter2_rl/part5_mcts_alphazero/2.5_MCTS_&_AlphaZero_solutions.ipynb",
+      "chapter": "chapter2_rl",
+      "kind": "solution",
+      "title": "2.5 MCTS & AlphaZero solutions",
+      "source_sha256": "3bbeb15d7edd325c291918a366242c1dcb2f2e5fcea238e3f03d96f8f19293b6",
+      "imported_sha256": "34be20e0256ecff699b97acfd261af79acd4627af6dd5ceb0106d61836628b26",
+      "adaptations": [
+        "Apply the documented reference shape or Windows sandbox compatibility repair."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part1_intro_to_evals/3.1_Intro_to_Evals_exercises.ipynb",
+      "local": "arena/notebooks/chapter3_llm_evals/part1_intro_to_evals/3.1_Intro_to_Evals_exercises.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "exercise",
+      "title": "3.1 Intro to Evals exercises",
+      "source_sha256": "1ff1f274f2b86332f326267c30d3371115d6518e4fd9a3eb86c2c68be87d46b4",
+      "imported_sha256": "376a2b344a58a8afa3e2bc9920a6520e074cb26111c9243a84dd937c07bca005",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part1_intro_to_evals/3.1_Intro_to_Evals_solutions.ipynb",
+      "local": "arena/reference/chapter3_llm_evals/part1_intro_to_evals/3.1_Intro_to_Evals_solutions.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "solution",
+      "title": "3.1 Intro to Evals solutions",
+      "source_sha256": "0ef590bdcbb171210b41e450e277d0cefc9d3bf09e8329b412f5ffc3d522d611",
+      "imported_sha256": "40564bc16faa345792e270463cf3a2ceb4b5f461d9f92ae4cb275a9f52abf6e8",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part2_dataset_generation/3.2_Dataset_Generation_exercises.ipynb",
+      "local": "arena/notebooks/chapter3_llm_evals/part2_dataset_generation/3.2_Dataset_Generation_exercises.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "exercise",
+      "title": "3.2 Dataset Generation exercises",
+      "source_sha256": "d2c103f1c4b546dcb772c8ecfaf9d16e8d6e35b968c1e81ae7f52fdf1bf59ab5",
+      "imported_sha256": "35f65b1c9e5aa1f40e8d4fc24502b0b4205ed3b60e61bd6b2e852b0b563657f1",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part2_dataset_generation/3.2_Dataset_Generation_solutions.ipynb",
+      "local": "arena/reference/chapter3_llm_evals/part2_dataset_generation/3.2_Dataset_Generation_solutions.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "solution",
+      "title": "3.2 Dataset Generation solutions",
+      "source_sha256": "e00401ab8a1ebb1db5314dd57cd962275fc8751d33368047a852a46f815fc264",
+      "imported_sha256": "9fcb44a5b77eb5c071ab694913ade1187d6d281d1e63925a95f44f1b324ce95b",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part3_running_evals_with_inspect/3.3_Running_Evals_with_Inspect_exercises.ipynb",
+      "local": "arena/notebooks/chapter3_llm_evals/part3_running_evals_with_inspect/3.3_Running_Evals_with_Inspect_exercises.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "exercise",
+      "title": "3.3 Running Evals with Inspect exercises",
+      "source_sha256": "c18d947f8ee2d5726cd8a3abf8c4de7a071a9695d160bd83b392d894aad19b98",
+      "imported_sha256": "081c8782e92e23ff9e3cdcf078788be8b5860844c4ca20e2e1d09103718f6c74",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part3_running_evals_with_inspect/3.3_Running_Evals_with_Inspect_solutions.ipynb",
+      "local": "arena/reference/chapter3_llm_evals/part3_running_evals_with_inspect/3.3_Running_Evals_with_Inspect_solutions.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "solution",
+      "title": "3.3 Running Evals with Inspect solutions",
+      "source_sha256": "a53cf7f5e99638f1560fa653a838384c460d83d95d04bbf4dbb3a68e9f8ac373",
+      "imported_sha256": "c773b97d977c9f4cf2c1c2326c17fda9f0e4b530e844586f32af3bb13da3832b",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part4_llm_agents/3.4_LLM_Agents_exercises.ipynb",
+      "local": "arena/notebooks/chapter3_llm_evals/part4_llm_agents/3.4_LLM_Agents_exercises.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "exercise",
+      "title": "3.4 LLM Agents exercises",
+      "source_sha256": "4dd55fc5ba5d4a7c1419995426dd3fd5bc79612a0747b3d1676103f58a86180a",
+      "imported_sha256": "5f0287a4483de3f2beeb55e9291b7412c9129ab174cba7a2e4867c6b2967659e",
+      "adaptations": [
+        "Repaired malformed placeholder or indentation; exercise remains unanswered.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part4_llm_agents/3.4_LLM_Agents_solutions.ipynb",
+      "local": "arena/reference/chapter3_llm_evals/part4_llm_agents/3.4_LLM_Agents_solutions.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "solution",
+      "title": "3.4 LLM Agents solutions",
+      "source_sha256": "f1367f29f97dcf3939b0f73372e6e435496c5393f54e70317d0dcff6e75a54d2",
+      "imported_sha256": "53731c305508b3f325ba5e3adfab7fc2d9fc8e340abdb8a64ff31f9f6f9b67db",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part5_ai_control/3.5_AI_Control_exercises.ipynb",
+      "local": "arena/notebooks/chapter3_llm_evals/part5_ai_control/3.5_AI_Control_exercises.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "exercise",
+      "title": "3.5 AI Control exercises",
+      "source_sha256": "b1131b05db8cb31608daf7f9cc7d23d4d3a05ef05f9392866a2279ff49a54d12",
+      "imported_sha256": "5387b18dbb43a1f1dadd4d70bd60df323cda8a81d76b41db1b17fa30d9d5e9f3",
+      "adaptations": [
+        "Apply the documented reference shape or Windows sandbox compatibility repair.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter3_llm_evals/exercises/part5_ai_control/3.5_AI_Control_solutions.ipynb",
+      "local": "arena/reference/chapter3_llm_evals/part5_ai_control/3.5_AI_Control_solutions.ipynb",
+      "chapter": "chapter3_llm_evals",
+      "kind": "solution",
+      "title": "3.5 AI Control solutions",
+      "source_sha256": "e1a60a3fa150791ecb37cf38dfc84d552d9a3e3ff019b31a5e9bbed14471a760",
+      "imported_sha256": "f4e600951f2430ea0ded80c0d45af50df97cc67d2ac77f18a24d407023d3b727",
+      "adaptations": [
+        "Apply the documented reference shape or Windows sandbox compatibility repair.",
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part1_emergent_misalignment/4.1_Emergent_Misalignment_exercises.ipynb",
+      "local": "arena/notebooks/chapter4_alignment_science/part1_emergent_misalignment/4.1_Emergent_Misalignment_exercises.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "exercise",
+      "title": "4.1 Emergent Misalignment exercises",
+      "source_sha256": "e7cb2fd1dbbb01d9e5957250b5fc07ed4fe4aaa03b496decef39876ae61f6629",
+      "imported_sha256": "f04ba9f3016ded1faf704c426035d130aa5a03892368005e9d946db626d7b975",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part1_emergent_misalignment/4.1_Emergent_Misalignment_solutions.ipynb",
+      "local": "arena/reference/chapter4_alignment_science/part1_emergent_misalignment/4.1_Emergent_Misalignment_solutions.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "solution",
+      "title": "4.1 Emergent Misalignment solutions",
+      "source_sha256": "70a8b2ad3f8252170a48741db6a36af503c62a0bea28bdd74c5e291a34a95945",
+      "imported_sha256": "674622dfc5cdb0b8d8ea43f80004f088106ad649ea073e10193cbc201ba731b9",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part2_science_of_misalignment/4.2_Science_of_Misalignment_exercises.ipynb",
+      "local": "arena/notebooks/chapter4_alignment_science/part2_science_of_misalignment/4.2_Science_of_Misalignment_exercises.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "exercise",
+      "title": "4.2 Science of Misalignment exercises",
+      "source_sha256": "6df730dae9a8852f41af6603fe978669228dcee6aefab174a430681f2100c352",
+      "imported_sha256": "37da81c84c5025001c74cee0013b7f5fb496a1d5c5631ff6ea3390f44a77a828",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part2_science_of_misalignment/4.2_Science_of_Misalignment_solutions.ipynb",
+      "local": "arena/reference/chapter4_alignment_science/part2_science_of_misalignment/4.2_Science_of_Misalignment_solutions.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "solution",
+      "title": "4.2 Science of Misalignment solutions",
+      "source_sha256": "2368d2c9dccc07e0c48797a545fbee60df72a1baf5d2d4ce34f64f4241c35143",
+      "imported_sha256": "309794663d1b3fb5abca08a5d8f65187247a78c50912d3f047d90de93e9ac4f9",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part3_interpreting_reasoning_models/4.3_Interpreting_Reasoning_Models_exercises.ipynb",
+      "local": "arena/notebooks/chapter4_alignment_science/part3_interpreting_reasoning_models/4.3_Interpreting_Reasoning_Models_exercises.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "exercise",
+      "title": "4.3 Interpreting Reasoning Models exercises",
+      "source_sha256": "02555d4d6408045888c24a47b2b59cf366ae4aecf2b083507b4725cd19b8b322",
+      "imported_sha256": "23dfe79959025b54f23f95b8c9e662910940bde6fb0537653d29a46c5fe0fd7b",
+      "adaptations": [
+        "Repaired malformed placeholder or indentation; exercise remains unanswered.",
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part3_interpreting_reasoning_models/4.3_Interpreting_Reasoning_Models_solutions.ipynb",
+      "local": "arena/reference/chapter4_alignment_science/part3_interpreting_reasoning_models/4.3_Interpreting_Reasoning_Models_solutions.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "solution",
+      "title": "4.3 Interpreting Reasoning Models solutions",
+      "source_sha256": "9749e3dbd50a682eed6767cc4e53c530102884e397f86bca8823858a4b52b03a",
+      "imported_sha256": "2ef9acda08f715ce225a5824f8a84cec6e381eedbb981e1a3b1148ed7b902261",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part4_persona_vectors/4.4_LLM_Psychology_&_Persona_Vectors_exercises.ipynb",
+      "local": "arena/notebooks/chapter4_alignment_science/part4_persona_vectors/4.4_LLM_Psychology_&_Persona_Vectors_exercises.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "exercise",
+      "title": "4.4 LLM Psychology & Persona Vectors exercises",
+      "source_sha256": "c9f92f8cb0641829e33595b71bacceb8554775fdaef91d1f4a614b0bed4a9075",
+      "imported_sha256": "a96c15d515218610a295b92ed3454e8ff0acee6f369a0eae44548a153a0d2b4c",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part4_persona_vectors/4.4_LLM_Psychology_&_Persona_Vectors_solutions.ipynb",
+      "local": "arena/reference/chapter4_alignment_science/part4_persona_vectors/4.4_LLM_Psychology_&_Persona_Vectors_solutions.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "solution",
+      "title": "4.4 LLM Psychology & Persona Vectors solutions",
+      "source_sha256": "897d0992a4552f3a96664a113591f4586ac7171c55ec09b30c3f84a620301094",
+      "imported_sha256": "55245896cc8ad8c1cf0c3402108d9f14f2f3c331849e0f631a0b36b91310f58e",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part5_investigator_agents/4.5_Investigator_Agents_exercises.ipynb",
+      "local": "arena/notebooks/chapter4_alignment_science/part5_investigator_agents/4.5_Investigator_Agents_exercises.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "exercise",
+      "title": "4.5 Investigator Agents exercises",
+      "source_sha256": "8f9df3746cef75f588fec9acb53edcc19eb8bbc59a329f5bbc67c181d279d4cd",
+      "imported_sha256": "864b23ae5e2241d409c223aaad6a14a893179841a2b5d3c6637cc5bf7c0b1b06",
+      "adaptations": [
+        "Repaired malformed placeholder or indentation; exercise remains unanswered.",
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths.",
+        "Validate the local Petri path against the actual snapshot folder."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    },
+    {
+      "source": "chapter4_alignment_science/exercises/part5_investigator_agents/4.5_Investigator_Agents_solutions.ipynb",
+      "local": "arena/reference/chapter4_alignment_science/part5_investigator_agents/4.5_Investigator_Agents_solutions.ipynb",
+      "chapter": "chapter4_alignment_science",
+      "kind": "solution",
+      "title": "4.5 Investigator Agents solutions",
+      "source_sha256": "3e61827ee98d167febf80f0e01eb2d8afe542e1199f4b3c2108c3dddc39bf049",
+      "imported_sha256": "a61a90963664b6d4ebad5ec3040313580903bc90dcc708681a4d0db83b78ec27",
+      "adaptations": [
+        "Replaced Colab/Linux installer with the local setup cell.",
+        "Use local snapshot and credential paths.",
+        "Validate the local Petri path against the actual snapshot folder."
+      ],
+      "syntax": "passed",
+      "execution_report": "arena/validation/setup-results.json"
+    }
+  ]
+}

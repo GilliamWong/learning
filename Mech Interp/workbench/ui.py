@@ -3,23 +3,24 @@
 from datetime import datetime
 from html import escape
 import json
-from urllib.parse import quote, urlparse
+import os
+from urllib.parse import quote, urlencode, urlparse
 
 import ipywidgets as w
 from IPython.display import HTML, display
 
-from .state import Progress, curriculum, new_notebook
+from .state import ROOT, Progress, curriculum, new_notebook
 
 STYLE = """<style>
-.wb {max-width:1000px;font-family:system-ui,sans-serif;color:var(--jp-ui-font-color1,#202a30)}
+.wb {max-width:1000px;font-family:system-ui,sans-serif;color:var(--vscode-editor-foreground,var(--jp-ui-font-color1,#202a30))}
 .wb h1 {font-size:30px;letter-spacing:-.7px;margin:8px 0 12px;line-height:1.2}
 .wb h2 {font-size:22px;letter-spacing:-.3px;margin:8px 0 12px}
 .wb p {font-size:14px;line-height:1.6;margin:8px 0}
 .wb .eyebrow {font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#418476;font-weight:700}
-.wb .hero {background:var(--jp-layout-color1,#f7f9f7);border:1px solid #9dbab2;border-left:5px solid #418476;border-radius:8px;padding:22px;margin:12px 0}
-.wb .card {border:1px solid var(--jp-border-color2,#ddd);border-radius:7px;padding:16px;margin:10px 0}
-.wb .muted {color:var(--jp-ui-font-color2,#53646a);font-size:12px}
-.wb a {color:var(--jp-content-link-color,#176e65);font-weight:600}
+.wb .hero {background:var(--vscode-textBlockQuote-background,var(--jp-layout-color1,#f7f9f7));border:1px solid #9dbab2;border-left:5px solid #418476;border-radius:8px;padding:22px;margin:12px 0}
+.wb .card {border:1px solid var(--vscode-panel-border,var(--jp-border-color2,#ddd));border-radius:7px;padding:16px;margin:10px 0}
+.wb .muted {color:var(--vscode-descriptionForeground,var(--jp-ui-font-color2,#53646a));font-size:12px}
+.wb a {color:var(--vscode-textLink-foreground,var(--jp-content-link-color,#176e65));font-weight:600}
 .wb a.cta,.wb a.cta:visited {display:inline-block;padding:10px 15px;border-radius:5px;color:#fff !important;background:#286e60;text-decoration:none;margin-top:8px}
 .wb .pill {font-size:11px;padding:3px 8px;border:1px solid #9dbab2;border-radius:20px;margin-left:6px;white-space:nowrap}
 .wb ul {line-height:1.8;padding-left:20px}
@@ -35,12 +36,19 @@ def html(body):
 
 
 def file_link(path, label, css=""):
+    if os.environ.get("MECH_INTERP_FRONTEND") == "vscode":
+        target = "vscode://local-learning.mech-interp-workbench/open?" + urlencode({"root": str(ROOT), "path": path})
+        return f'<a class="{css}" href="{escape(target, quote=True)}">{escape(label)}</a>'
     args = escape(json.dumps({"path": path}), quote=True)
+    command = "markdownviewer:open" if path.lower().endswith(".md") else "docmanager:open"
     return (f'<a class="{css}" href="/lab/tree/{quote(path, safe="/")}" '
-            f'data-commandlinker-command="docmanager:open" data-commandlinker-args="{args}">{escape(label)}</a>')
+            f'data-commandlinker-command="{command}" data-commandlinker-args="{args}">{escape(label)}</a>')
 
 
 def web_link(url, label):
+    if os.environ.get("MECH_INTERP_FRONTEND") == "vscode":
+        target = "vscode://local-learning.mech-interp-workbench/open?" + urlencode({"root": str(ROOT), "url": url})
+        return f'<a href="{escape(target, quote=True)}">{escape(label)} ↗</a>'
     return f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener noreferrer">{escape(label)} ↗</a>'
 
 
@@ -60,6 +68,8 @@ def note_box(store, key, label, placeholder=""):
 
 def resource_card(resource, store):
     links = web_link(resource["url"], "Original source")
+    if resource.get("notebook"):
+        links = file_link(resource["notebook"], "Open local exercises") + " &nbsp;·&nbsp; " + links
     if resource.get("local"):
         links = file_link(resource.get("reader", resource["local"]), "Read local paper") + " &nbsp;·&nbsp; " + links
     if resource.get("web"):
@@ -126,15 +136,15 @@ def home():
         if next_item:
             module, task = next_item
             body = f'<div class="hero"><div class="eyebrow">Continue · Module {module["id"]}</div><h1>{escape(module["title"])}</h1>'
-            body += f'<p><b>Your next action:</b> {escape(task["label"])}.</p>'
+            body += f'<p><b>Next unchecked task:</b> {escape(task["label"])}.</p>'
             checkpoint = state.get("notes", {}).get(f'module-{module["id"]}', "")
             if checkpoint:
                 body += f'<p><b>Your stopping point:</b> {escape(checkpoint)}</p>'
             body += file_link(module["file"], "Continue learning →", "cta") + '</div>'
         else:
             body = '<div class="hero"><h1>Your next question</h1><p>The current route is complete. Start a small experiment in Your work.</p></div>'
-        summary.children = [html(body + f'<p class="muted">{count} of {total} tasks checked · progress is saved in this folder</p>')]
-        route.children = [html('<p>Modules 1–2 are complete local exercise sets. Modules 3–6 provide reading plans, official exercise links, and research scaffolds. Follow the route or open any module.</p>')] + cards
+        summary.children = [html(body + f'<p class="muted">{count} of {total} tasks checked · Checkmarks are manual. Your study plan gives the current suggested order.</p>')]
+        route.children = [html('<p>Modules 1–2 build the opening skills. Modules 3–6 pair local ARENA exercises with readings and experiments. Use the study plan for the order, or open any module.</p>')] + cards
     refresh()
     refresh_button = w.Button(description="Refresh progress", icon="refresh")
     refresh_button.on_click(refresh)
@@ -191,5 +201,9 @@ def home():
     tabs = w.Tab(children=[continue_tab, route, library_tab, work_tab])
     for index, title in enumerate(["Continue", "Course", "Reading library", "Your work"]):
         tabs.set_title(index, title)
-    return w.VBox([html('<div class="eyebrow">Your course & research notebook</div><h1>Mech Interp Workbench</h1><p>Build a model. Read with a question. Test an explanation.</p>'), tabs],
+    shortcuts = (file_link("LEARNING_PLAN.md", "Your study plan →", "cta") + " &nbsp; "
+                 + file_link("arena/README.md", "All ARENA notebooks") + " &nbsp;·&nbsp; "
+                 + file_link("arena/00_Environment_Check.ipynb", "Check ARENA setup"))
+    return w.VBox([html('<div class="eyebrow">Your course & research notebook</div><h1>Mech Interp Workbench</h1><p>Build a model. Read with a question. Test an explanation.</p>'
+                       + f'<p>{shortcuts}</p>'), tabs],
                   layout=w.Layout(width="100%", max_width="1000px"))

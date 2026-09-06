@@ -1,5 +1,9 @@
 # Initial validation — 2026-09-04
 
+For the ARENA import, GPU environments, complete reference runs, browser checks, and Windows launcher repair
+completed on 6 September, see [the current ARENA validation report](arena/VALIDATION.md). The record below
+describes the original workbench before that expansion.
+
 ## Execution
 
 - Validated and executed the home notebook, six module notebooks, and two blank templates in fresh Python kernels.

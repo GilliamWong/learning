@@ -1,0 +1,29 @@
+{
+  "name": "mech-interp-workbench",
+  "displayName": "Mech Interp Workbench",
+  "description": "Your local learning dashboard, notebooks, papers and progress inside VS Code.",
+  "version": "0.1.1",
+  "publisher": "local-learning",
+  "license": "UNLICENSED",
+  "engines": { "vscode": "^1.110.0" },
+  "categories": ["Other", "Notebooks"],
+  "main": "./extension.js",
+  "activationEvents": ["workspaceContains:curriculum.json", "onUri", "onWebviewPanel:mechInterp.dashboard"],
+  "extensionDependencies": ["ms-toolsai.jupyter"],
+  "capabilities": { "untrustedWorkspaces": { "supported": false, "description": "Opens and runs the Python notebooks in your learning workspace." } },
+  "contributes": {
+    "commands": [
+      { "command": "mechInterp.dashboard", "title": "Open Dashboard", "category": "Learning", "icon": "$(book)" },
+      { "command": "mechInterp.plan", "title": "Open Study Plan", "category": "Learning" },
+      { "command": "mechInterp.openFile", "title": "Open Learning File", "category": "Learning" }
+    ],
+    "viewsContainers": { "activitybar": [{ "id": "mechInterp", "title": "Learning", "icon": "media/book.svg" }] },
+    "views": { "mechInterp": [{ "id": "mechInterp.navigation", "name": "Learning", "when": "mechInterp.available" }] },
+    "configuration": {
+      "title": "Mech Interp Workbench",
+      "properties": {
+        "mechInterp.openOnStartup": { "type": "boolean", "default": true, "description": "Open the learning dashboard when this course workspace starts." }
+      }
+    }
+  }
+}

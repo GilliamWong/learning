@@ -7,6 +7,8 @@ ARENA / Callum McDougall · Exercises · Module 01
 
 [ARENA 0.0 — Tensor manipulation](https://learn.arena.education/chapter0_fundamentals/00_prereqs/2-einops-einsum-tensor-manipulation/)
 
+[Open local exercises](../arena/notebooks/chapter0_fundamentals/part0_prereqs/0.0_Prerequisites_exercises.ipynb)
+
 Read Broadcasting. Use the einops and einsum examples as references when an exercise needs them.
 
 The local exercises are original practice tasks on the same skills; this link provides the official, broader exercise set.
@@ -25,9 +27,11 @@ ARENA / Callum McDougall · Exercises · Module 03
 
 [ARENA 1.1 — Transformers from scratch](https://learn.arena.education/chapter1_transformer_interp/01_transformers/)
 
-Inputs & Outputs, then Clean Transformer Implementation. Read the basic training loop; defer advanced sampling and caching.
+[Open local exercises](../arena/notebooks/chapter1_transformer_interp/part1_transformer_from_scratch/1.1_Transformer_from_Scratch_exercises.ipynb)
 
-Open the page's exercises Colab, not its solutions notebook. The official notebook supplies its own environment setup.
+Inputs & Outputs, then Clean Transformer Implementation, a training run, and initial sampling. Advanced beam search and KV caching can wait.
+
+Open the local exercise copy with the ARENA (local GPU) kernel. Run its local setup cell first; your answers stay in this workspace.
 
 ## A Mathematical Framework for Transformer Circuits
 Elhage et al. / Anthropic · Research article · Module 03
@@ -39,11 +43,11 @@ First pass: Transformer Overview, especially High-Level Architecture and the Res
 Treat the simplifying assumptions as part of the model being studied, not properties of every transformer.
 
 ## How To Become A Mechanistic Interpretability Researcher
-Neel Nanda · Research guidance · Module 03
+Neel Nanda · Research guidance · Module 01
 
 [How To Become A Mechanistic Interpretability Researcher](https://www.alignmentforum.org/posts/jP9KDyMkchuv6tHwm/how-to-become-a-mechanistic-interpretability-researcher)
 
-Stage 1 now; mini-project and hypothesis-testing advice when starting Module 6.
+Skim the opening summary and Stage 1 now. Revisit transformer basics in Module 3; techniques/tooling in Modules 4–5; Stage 2 before a tutorial extension; Stage 3 before longer projects.
 
 The one-month guideline means about 200 working hours in the post's footnote. It is not a part-time calendar deadline.
 
@@ -52,9 +56,11 @@ ARENA / Callum McDougall · Exercises · Module 04
 
 [ARENA 1.2 — TransformerLens & induction circuits](https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/)
 
+[Open local exercises](../arena/notebooks/chapter1_transformer_interp/part2_intro_to_mech_interp/1.2_Intro_to_Mech_Interp_exercises.ipynb)
+
 Sections 1–3 first: loading and caching, finding induction heads, and hooks. Section 4 is a later deep dive.
 
-The guide and original exercises are linked from the local module. Transformer dependencies are not part of the opening CPU environment.
+Open the local exercise copy with the ARENA (local GPU) kernel. Run its local setup cell first; your answers stay in this workspace.
 
 ## In-context Learning and Induction Heads
 Olsson et al. / Anthropic · Paper · Module 04
@@ -71,6 +77,8 @@ Distinguish evidence in small attention-only models from broader hypotheses abou
 ARENA / Callum McDougall · Exercises · Module 05
 
 [ARENA 1.4.1 — Indirect Object Identification](https://learn.arena.education/chapter1_transformer_interp/21_ioi/)
+
+[Open local exercises](../arena/notebooks/chapter1_transformer_interp/part41_indirect_object_identification/1.4.1_Indirect_Object_Identification_exercises.ipynb)
 
 Sections 1–3 for task setup, attribution, and activation patching. Sections 4–5 deepen the replication.
 
