@@ -31,7 +31,7 @@ your understanding or establish a new research result.
 - The induction model loaded and produced causal attention caches for repeated-token inputs.
 - IOI caching, an identity intervention, and a finite 12 × 15 residual-patching matrix passed. This extra check
   used one prompt pair; it is a numerical/tooling check, not a paper replication.
-- The main ARENA environment's 256 packages and the SAE circuits environment's 149 packages passed
+- The main ARENA environment's 257 packages and the SAE circuits environment's 149 packages passed
   `uv pip check`. The latter uses a separate kernel because Circuit Tracer requires newer dependency
   versions than the older SAE visualization exercises.
 - Circuit Tracer's `ReplacementModel` and `attribute` imports passed; a tiny TransformerLens model completed

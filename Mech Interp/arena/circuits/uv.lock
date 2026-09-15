@@ -144,7 +144,7 @@ requires-dist = [
     { name = "circuit-tracer", editable = "../ARENA_3.0/chapter1_transformer_interp/exercises/circuit-tracer" },
     { name = "eindex-callum" },
     { name = "einops", specifier = ">=0.8,<1" },
-    { name = "ipykernel", specifier = ">=6.29.5,<7" },
+    { name = "ipykernel", specifier = "==6.31.0" },
     { name = "ipywidgets", specifier = ">=8.1,<9" },
     { name = "nbclient" },
     { name = "nbformat" },

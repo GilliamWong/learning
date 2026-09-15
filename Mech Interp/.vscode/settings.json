@@ -15,5 +15,31 @@
     "arena/ARENA_3.0": true,
     "arena/validation/executed": true,
     "arena/validation/sequential": true
+  },
+  "python.analysis.exclude": [
+    "**/.git",
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.venv",
+    "**/.cache",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "**/.runtime",
+    "**/.ipynb_checkpoints",
+    "arena/outputs",
+    "arena/validation/executed",
+    "arena/validation/sequential"
+  ],
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/.cache/**": true,
+    "**/.runtime/**": true,
+    "**/__pycache__/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.ruff_cache/**": true,
+    "**/.ipynb_checkpoints/**": true,
+    "**/arena/outputs/**": true,
+    "**/arena/validation/executed/**": true,
+    "**/arena/validation/sequential/**": true
   }
 }

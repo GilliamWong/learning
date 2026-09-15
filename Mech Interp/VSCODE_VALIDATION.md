@@ -50,6 +50,21 @@ their local rendering/navigation behavior is covered by component tests and the 
 The final small updates to Continue, save recovery, and portable notebook links are included in the installed
 extension. Reload an already open learning window once to load that final version.
 
+## Kernel startup follow-up
+
+ARENA 1.1 later stalled during the VS Code startup handshake with **ipykernel 7.3.0**. The Python process
+was alive and responded to a read-only kernel-info request; VS Code then completed the pending connection.
+This matches a [reported ipykernel 7 hang with Jupyter extension 2025.9.1](https://github.com/microsoft/vscode-jupyter/issues/17410).
+
+All three learning environments now explicitly pin **ipykernel 6.31.0**. The SAE-circuits environment already
+used that version. Three fresh ARENA kernels connected in **0.80, 0.73, and 0.73 seconds**. Both ARENA 1.1
+setup/import prefixes and the five shared-panel/reader test cells passed with the pin. Dependency checks
+passed for the workbench's 113 packages, ARENA's 257 packages, and the circuit environment's 149 packages.
+
+After restarting ARENA 1.1, you confirmed that setup completes. The native Jupyter log recorded the restart
+request at 12:53:11.435 and completion at 12:53:12.013. The diagnostic did not execute exercise answers or
+change your notebook work. The startup timing records are in `.runtime/kernel-start-check/ipykernel-6-results.json`.
+
 ## Reproduce the automated checks
 
 From this workspace root:

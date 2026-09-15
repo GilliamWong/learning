@@ -57,6 +57,13 @@ If automatic kernel selection is unavailable in a future Jupyter extension versi
 and the workbench shows the exact interpreter to select. Use **Setup ARENA.cmd** if an ARENA environment
 needs restoring.
 
+## Kernel startup compatibility
+
+The learning environments pin **ipykernel 6.31.0**. Version 7 can leave this version of VS Code's Jupyter
+extension stuck on “Connecting to kernel”; the [upstream issue](https://github.com/microsoft/vscode-jupyter/issues/17410)
+describes the same symptom. If a notebook was already open when this pin was applied, use **Restart** in
+that notebook's toolbar once, then rerun its setup cell.
+
 ## What was checked
 
 The native dashboard loaded on this computer. You confirmed that the environment-check notebook produced

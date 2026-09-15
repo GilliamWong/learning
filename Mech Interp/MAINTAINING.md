@@ -85,6 +85,11 @@ integrated-browser command. These two integrations are isolated in `vscode-exten
 `.vscode/learning.env` identifies the native notebook frontend. Browser startup clears that marker so
 JupyterLab keeps its own document links. Notebook helper colors support both editors' theme variables.
 
+Keep `ipykernel==6.31.0` in all three environment definitions until the VS Code compatibility issue is
+resolved and tested. A live ARENA 1.1 startup hung with ipykernel 7.3.0 and Jupyter extension 2025.9.1;
+the 6.31 pin passed fresh starts and the learner's actual restart. See
+[the upstream report](https://github.com/microsoft/vscode-jupyter/issues/17410) and [local validation](VSCODE_VALIDATION.md).
+
 `tools/prepare_workbench.ps1` holds the shared environment preparation; the two launchers then open their
 respective interfaces. The existing Windows Application Control launcher repair is preserved.
 
